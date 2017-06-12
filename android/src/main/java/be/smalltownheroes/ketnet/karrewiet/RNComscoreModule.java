@@ -25,6 +25,6 @@ public class RNComscoreModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void show(String type, String message) {
     String text = "Type: " + type + " - message:" + message;
-    Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
+    Toast.makeText(getReactApplicationContext(), text, Toast.LENGTH_LONG).show();
   }
 }

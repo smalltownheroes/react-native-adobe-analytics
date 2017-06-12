@@ -8,4 +8,3 @@
 @interface RNComscore : NSObject <RCTBridgeModule>
 
 @end
-  
