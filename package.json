@@ -1,0 +1,19 @@
+
+{
+  "name": "react-native-comscore",
+  "version": "1.0.0",
+  "description": "Wrapper for the Comscore native library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "comscore"
+  ],
+  "author": "Small Town Heroes",
+  "license": "",
+  "peerDependencies": {
+    "react-native": "0.43.3"
+  }
+}
