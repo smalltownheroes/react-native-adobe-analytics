@@ -1,4 +1,12 @@
 
+allprojects {
+    repositories {
+        maven {
+            url  "http://comscore.bintray.com/Analytics"
+        }
+    }
+}
+
 buildscript {
     repositories {
         jcenter()
@@ -28,12 +36,9 @@ android {
 
 repositories {
     mavenCentral()
-    maven {
-        url  "http://comscore.bintray.com/Analytics"
-    }
 }
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'com.comscore:android-analytics:5.3.1'
+    compile 'com.comscore:android-analytics:5.+'
 }
