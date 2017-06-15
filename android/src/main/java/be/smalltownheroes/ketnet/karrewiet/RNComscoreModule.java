@@ -13,7 +13,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
-  public RNComscoreModule(ReactApplicationContext reactContext) {
+  public RNComScoreModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
   }
