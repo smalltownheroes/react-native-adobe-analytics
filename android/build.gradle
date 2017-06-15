@@ -28,7 +28,9 @@ android {
 
 repositories {
     mavenCentral()
-    maven { url 'https://maven.fabric.io/public' }
+    maven {
+        url  "http://comscore.bintray.com/Analytics"
+    }
 }
 
 dependencies {
