@@ -26,9 +26,17 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
     return "RNComScore";
   }
 
+  public String getAppName() {
+  	return this.appName;
+  }
+
+  public void setAppName(String appName) {
+  	this.appName = appName;
+  }
+
   @ReactMethod
   public void init(ReadableMap options) {
-    this.comScoreAppName = options.getString("appName");
+    String comScoreAppName = options.getString("appName");
     String comScorePublisherSecret = options.getString("publisherSecret");
     String comScorePixelUrl = options.getString("pixelUrl");
 
@@ -42,7 +50,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
         labels.put("waar", "app");
 
     PublisherConfiguration publisher = new PublisherConfiguration.Builder()
-        .applicationName(this.comScoreAppName)
+        .applicationName(comScoreAppName)
         .publisherSecret(comScorePublisherSecret)
         .pixelUrl(comScorePixelUrl)
         .persistentLabels(labels)
@@ -50,11 +58,12 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
     Analytics.getConfiguration().addClient(publisher);
     Analytics.start(this.reactContext);
+    setAppName(comScoreAppName);
   }
 
   @ReactMethod
   public void trackView(String view) {
-    String comScoreViewName = this.comScoreAppName + view;
+    String comScoreViewName = getAppName() + view;
   	EventInfo eventInfo = new EventInfo();
     eventInfo.setLabel("view", comScoreViewName.replace("/", "."));
     Analytics.notifyViewEvent(eventInfo);
