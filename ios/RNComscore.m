@@ -1,11 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "CSComScore.h"
 #import "RNComscore.h"
-#if __has_include("RCTLog.h")
-#import "RCTLog.h"
-#else
-#import <React/RCTLog.h>
-#endif
 #if __has_include("RCTConvert.h")
 #import "RCTConvert.h"
 #else
