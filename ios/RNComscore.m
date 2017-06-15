@@ -1,4 +1,5 @@
-
+#import <Foundation/Foundation.h>
+#import "CSComScore.h"
 #import "RNComscore.h"
 #if __has_include("RCTLog.h")
 #import "RCTLog.h"
