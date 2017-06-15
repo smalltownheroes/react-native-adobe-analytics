@@ -16,6 +16,8 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
+  private String appName;
+
   public RNComScoreModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
@@ -24,14 +26,6 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
   @Override
   public String getName() {
     return "RNComScore";
-  }
-
-  public String getAppName() {
-  	return this.appName;
-  }
-
-  public void setAppName(String appName) {
-  	this.appName = appName;
   }
 
   @ReactMethod
@@ -52,7 +46,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
     PublisherConfiguration publisher = new PublisherConfiguration.Builder()
         .applicationName(comScoreAppName)
         .publisherSecret(comScorePublisherSecret)
-        .pixelUrl(comScorePixelUrl)
+        .liveEndpointUrl(comScorePixelUrl)
         .persistentLabels(labels)
         .build();
 
@@ -75,6 +69,14 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
   	EventInfo eventInfo = new EventInfo();
     eventInfo.setLabel("event", comScoreEventName);
     Analytics.notifyViewEvent(eventInfo);
+  }
+
+  public String getAppName() {
+  	return this.appName;
+  }
+
+  public void setAppName(String appName) {
+  	this.appName = appName;
   }
 
 }
