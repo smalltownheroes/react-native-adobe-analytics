@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNComscore } = NativeModules;
+const { RNComScore } = NativeModules;
 
-export default RNComscore;
+export default RNComScore;

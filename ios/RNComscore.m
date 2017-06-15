@@ -69,7 +69,7 @@ RCT_EXPORT_METHOD(trackView:(NSString *) view)
     NSString *dottedView = [view stringByReplacingOccurrencesOfString:@"/" withString:@"."];
     // all lowercase
     //NSString *comscoreViewName = [[CSAppName stringByAppendingString:dottedView ] lowercaseString];
-    NSString *comscoreViewName = [CSAppName stringByAppendingString:dottedView ];
+    NSString *comscoreViewName = [comScoreAppName stringByAppendingString:dottedView ];
     
     [CSComScore viewWithLabels:@{@"name":comscoreViewName }];
 }
