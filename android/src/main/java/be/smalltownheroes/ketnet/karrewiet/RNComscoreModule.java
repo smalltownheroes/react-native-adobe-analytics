@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.ReadableMap;
 
 public class RNComscoreModule extends ReactContextBaseJavaModule {
 
@@ -23,8 +24,24 @@ public class RNComscoreModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void show(String type, String message) {
-    String text = "Type: " + type + " - message:" + message;
+  public void init(ReadableMap options) {
+    String comScoreAppName = options.getString("appName");
+    String comScorePublisherSecret = options.getString("publisherSecret");
+    String comScorePixelUrl = options.getString("pixelUrl");
+    String text = "INIT: appName: {" + comScoreAppName + "} - publisherSecret: {" + comScorePublisherSecret + "} - pixelUrl: {" + comScorePixelUrl + "}";
     Toast.makeText(getReactApplicationContext(), text, Toast.LENGTH_LONG).show();
   }
+
+  @ReactMethod
+  public void trackView(String view) {
+    String text = "TRACKVIEW: view: {" + view + "}";
+    Toast.makeText(getReactApplicationContext(), text, Toast.LENGTH_LONG).show();
+  }
+
+  @ReactMethod
+  public void trackEvent(String action, String category) {
+    String text = "TRACKEVENT: action: {" + action + "} - category: {" + category + "}";
+    Toast.makeText(getReactApplicationContext(), text, Toast.LENGTH_LONG).show();
+  }
+
 }
