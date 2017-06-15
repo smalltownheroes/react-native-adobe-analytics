@@ -12,6 +12,8 @@
 }
 
 NSString *comScoreAppName;
+NSString *comScorePublisherSecret;
+NSString *comScorePixelUrl;
 
 - (dispatch_queue_t)methodQueue
 {
@@ -23,11 +25,14 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSDictionary *) options)
 {
 
-    comScoreAppName = options["appName"];
+    comScoreAppName = [RCTConvert NSString:options[@"appName"]];
+    comScorePublisherSecret = [RCTConvert NSString:options[@"publisherSecret"]];
+    comScorePixelUrl = [RCTConvert NSString:options[@"pixelUrl"]];
+
     [CSComScore setAppContext];
     [CSComScore setAppName:comScoreAppName];
-    [CSComScore setPublisherSecret:options["publisherSecret"]];
-    [CSComScore setPixelURL:options["pixelUrl"]];
+    [CSComScore setPublisherSecret:comScorepublisherSecret];
+    [CSComScore setPixelURL:comScorePixelUrl];
 
     NSMutableDictionary *labels = [NSMutableDictionary dictionary];
     labels[@"category"] = @"karrewiet";
