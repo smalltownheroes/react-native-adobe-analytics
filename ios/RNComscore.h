@@ -5,6 +5,6 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNComscore : NSObject <RCTBridgeModule>
+@interface RNComScore : NSObject <RCTBridgeModule>
 
 @end
