@@ -9,7 +9,7 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 
-public class RNComscoreModule extends ReactContextBaseJavaModule {
+public class RNComScoreModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
