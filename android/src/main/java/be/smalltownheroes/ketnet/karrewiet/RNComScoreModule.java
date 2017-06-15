@@ -20,7 +20,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
   @Override
   public String getName() {
-    return "RNComscore";
+    return "RNComScore";
   }
 
   @ReactMethod
