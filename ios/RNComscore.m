@@ -6,6 +6,11 @@
 #else
 #import <React/RCTLog.h>
 #endif
+#if __has_include("RCTConvert.h")
+#import "RCTConvert.h"
+#else
+#import <React/RCTConvert.h>
+#endif
 
 @implementation RNComScore {
 
@@ -31,7 +36,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options)
 
     [CSComScore setAppContext];
     [CSComScore setAppName:comScoreAppName];
-    [CSComScore setPublisherSecret:comScorepublisherSecret];
+    [CSComScore setPublisherSecret:comScorePublisherSecret];
     [CSComScore setPixelURL:comScorePixelUrl];
 
     NSMutableDictionary *labels = [NSMutableDictionary dictionary];
