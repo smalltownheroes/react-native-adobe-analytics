@@ -49,12 +49,12 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
         .build();
 
     Analytics.getConfiguration().addClient(publisher);
-    Analytics.start(getApplicationContext());
+    Analytics.start(this.reactContext);
   }
 
   @ReactMethod
   public void trackView(String view) {
-    String comScoreViewName = this.comScoreAppName + viewName;
+    String comScoreViewName = this.comScoreAppName + view;
   	EventInfo eventInfo = new EventInfo();
     eventInfo.setLabel("view", comScoreViewName.replace("/", "."));
     Analytics.notifyViewEvent(eventInfo);
@@ -62,19 +62,10 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void trackEvent(String action, String category) {
+  	String comScoreEventName = category + "." + action;
   	EventInfo eventInfo = new EventInfo();
-    eventInfo.setLabel("event", event);
+    eventInfo.setLabel("event", comScoreEventName);
     Analytics.notifyViewEvent(eventInfo);
-  }
-
-  @Override
-  public void onResume () {
-    Analytics.notifyEnterForeground();
-  }
-
-  @Override
-  public void onPause () {
-    Analytics.notifyExitForeground();
   }
 
 }
