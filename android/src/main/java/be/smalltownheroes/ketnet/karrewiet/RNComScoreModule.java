@@ -41,9 +41,8 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
         labels.put("productiehuis", "Small Town Heroes");
         labels.put("waar", "app");
         comScore.setLabels(labels);
-      } catch (Exception ex) {
-      	// fail silently for now
-      }
+    } catch (Exception ex) {
+    	// fail silently for now
     }
     // String text = "INIT: appName: {" + comScoreAppName + "} - publisherSecret: {" + comScorePublisherSecret + "} - pixelUrl: {" + comScorePixelUrl + "}";
     // Toast.makeText(getReactApplicationContext(), text, Toast.LENGTH_LONG).show();
