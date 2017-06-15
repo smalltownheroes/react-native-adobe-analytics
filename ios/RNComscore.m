@@ -25,9 +25,9 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options)
 
     comScoreAppName = options["appName"];
     [CSComScore setAppContext];
-    [CSComScore setAppName:comScoreAppName;
-    [CSComScore setPublisherSecret:options["publisherSecret"];
-    [CSComScore setPixelURL:options["pixelUrl"];
+    [CSComScore setAppName:comScoreAppName];
+    [CSComScore setPublisherSecret:options["publisherSecret"]];
+    [CSComScore setPixelURL:options["pixelUrl"]];
 
     NSMutableDictionary *labels = [NSMutableDictionary dictionary];
     labels[@"category"] = @"karrewiet";
