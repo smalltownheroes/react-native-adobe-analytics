@@ -11,6 +11,7 @@
 
 }
 
+NSString *comScoreAppName;
 
 - (dispatch_queue_t)methodQueue
 {
@@ -22,8 +23,9 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSDictionary *) options)
 {
 
+    comScoreAppName = options["appName"];
     [CSComScore setAppContext];
-    [CSComScore setAppName:options["appName"];
+    [CSComScore setAppName:comScoreAppName;
     [CSComScore setPublisherSecret:options["publisherSecret"];
     [CSComScore setPixelURL:options["pixelUrl"];
 
