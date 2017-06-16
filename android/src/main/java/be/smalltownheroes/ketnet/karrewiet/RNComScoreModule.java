@@ -31,6 +31,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void init(ReadableMap options) {
     String comScoreAppName = options.getString("appName");
+    String comScorePublisherId = options.getString("publisherid");
     String comScorePublisherSecret = options.getString("publisherSecret");
     String comScorePixelUrl = options.getString("pixelUrl");
 
@@ -45,9 +46,11 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
     PublisherConfiguration publisher = new PublisherConfiguration.Builder()
         .applicationName(comScoreAppName)
+        .publisherId(comScorePublisherId)
         .publisherSecret(comScorePublisherSecret)
         .liveEndpointUrl(comScorePixelUrl)
         .persistentLabels(labels)
+        .secureTransmission(true)
         .build();
 
     Analytics.getConfiguration().addClient(publisher);
