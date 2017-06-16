@@ -31,7 +31,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void init(ReadableMap options) {
     String comScoreAppName = options.getString("appName");
-    String comScorePublisherId = options.getString("publisherid");
+    String comScorePublisherId = options.getString("publisherId");
     String comScorePublisherSecret = options.getString("publisherSecret");
     String comScorePixelUrl = options.getString("pixelUrl");
 
