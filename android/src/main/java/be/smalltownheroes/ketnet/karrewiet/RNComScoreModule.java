@@ -62,7 +62,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
   public void trackView(String view) {
     String comScoreViewName = getAppName() + view;
   	EventInfo eventInfo = new EventInfo();
-    eventInfo.setLabel("view", comScoreViewName.replace("/", "."));
+    eventInfo.setLabel("name", comScoreViewName.replace("/", "."));
     Analytics.notifyViewEvent(eventInfo);
   }
 
