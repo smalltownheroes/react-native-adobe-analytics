@@ -10,76 +10,125 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 import com.comscore.Analytics;
 import com.comscore.EventInfo;
+import com.comscore.streaming.StreamingAnalytics;
 import com.comscore.PublisherConfiguration;
 
 public class RNComScoreModule extends ReactContextBaseJavaModule {
 
-  private final ReactApplicationContext reactContext;
+	private final ReactApplicationContext reactContext;
 
-  private String appName;
+	private String appName;
 
-  public RNComScoreModule(ReactApplicationContext reactContext) {
-    super(reactContext);
-    this.reactContext = reactContext;
-  }
+	public RNComScoreModule(ReactApplicationContext reactContext) {
+		super(reactContext);
+		this.reactContext = reactContext;
+	}
 
-  @Override
-  public String getName() {
-    return "RNComScore";
-  }
+	@Override
+	public String getName() {
+		return "RNComScore";
+	}
 
-  @ReactMethod
-  public void init(ReadableMap options) {
-    String comScoreAppName = options.getString("appName");
-    String comScorePublisherId = options.getString("publisherId");
-    String comScorePublisherSecret = options.getString("publisherSecret");
-    String comScorePixelUrl = options.getString("pixelUrl");
+	@ReactMethod
+	public void init(ReadableMap options) {
+		String comScoreAppName = options.getString("appName");
+		String comScorePublisherId = options.getString("publisherId");
+		String comScorePublisherSecret = options.getString("publisherSecret");
+		String comScorePixelUrl = options.getString("pixelUrl");
 
-    HashMap<String, String> labels = new HashMap<String, String>();
-        labels.put("category", "app");
-        labels.put("behoefte", "verbindend");
-        labels.put("doelgroep", "none");
-        labels.put("marketing", "none");
-        labels.put("mediatype", "tv");
-        labels.put("productiehuis", "Small Town Heroes");
-        labels.put("waar", "app");
+		String streamSenseMediaPlayer = options.getString("streamSenseMediaPlayer");
+		String streamSenseVersion = options.getString("streamSenseVersion");
+		String streamSenseChannel = options.getString("streamSenseChannel");
 
-    PublisherConfiguration publisher = new PublisherConfiguration.Builder()
-        .applicationName(comScoreAppName)
-        .publisherId(comScorePublisherId)
-        .publisherSecret(comScorePublisherSecret)
-        .liveEndpointUrl(comScorePixelUrl)
-        .persistentLabels(labels)
-        .secureTransmission(true)
-        .build();
+		this.streamingAnalytics = new StreamingAnalytics();
 
-    Analytics.getConfiguration().addClient(publisher);
-    Analytics.start(this.reactContext);
-    setAppName(comScoreAppName);
-  }
+		HashMap<String, String> labels = new HashMap<String, String>();
+				labels.put("category", "app");
+				labels.put("behoefte", "verbindend");
+				labels.put("doelgroep", "none");
+				labels.put("marketing", "none");
+				labels.put("mediatype", "tv");
+				labels.put("productiehuis", "Small Town Heroes");
+				labels.put("waar", "app");
 
-  @ReactMethod
-  public void trackView(String view) {
-    String comScoreViewName = getAppName() + view;
-  	EventInfo eventInfo = new EventInfo();
-    eventInfo.setLabel("name", comScoreViewName.replace("/", "."));
-    Analytics.notifyViewEvent(eventInfo);
-  }
+		PublisherConfiguration publisher = new PublisherConfiguration.Builder()
+				.applicationName(comScoreAppName)
+				.publisherId(comScorePublisherId)
+				.publisherSecret(comScorePublisherSecret)
+				.liveEndpointUrl(comScorePixelUrl)
+				.persistentLabels(labels)
+				.secureTransmission(true)
+				.build();
 
-  @ReactMethod
-  public void trackEvent(String action, String category) {
-  	String comScoreEventName = category + "." + action;
-  	EventInfo eventInfo = new EventInfo();
-    eventInfo.setLabel("event", comScoreEventName);
-    Analytics.notifyViewEvent(eventInfo);
-  }
+		Analytics.getConfiguration().addClient(publisher);
+		Analytics.start(this.reactContext);
+		setAppName(comScoreAppName);
+	}
 
-  public String getAppName() {
-  	return this.appName;
-  }
+	@ReactMethod
+	public void trackView(String view) {
+		String comScoreViewName = getAppName() + view;
+		EventInfo eventInfo = new EventInfo();
+		eventInfo.setLabel("name", comScoreViewName.replace("/", "."));
+		Analytics.notifyViewEvent(eventInfo);
+	}
 
-  public void setAppName(String appName) {
-  	this.appName = appName;
-  }
+	@ReactMethod
+	public void trackEvent(String action, String category) {
+		String comScoreEventName = category + "." + action;
+		EventInfo eventInfo = new EventInfo();
+		eventInfo.setLabel("event", comScoreEventName);
+		Analytics.notifyViewEvent(eventInfo);
+	}
+
+	@ReactMethod
+	public void trackVideoStreaming(ReadableMap videoInfo, String videoAction) {
+		if (videoInfo != null) {
+			int position = 0;
+			if (!videoInfo.isNull("position")) {
+				position = videoInfo.getInt("position")));
+			}
+			if (videoAction == "start") {
+				Map<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
+				this.streamingAnalytics.createPlaybackSession();
+				this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
+				this.streamingAnalytics.notifyPlay(position);
+			} else if (videoAction == "stop") {
+				this.streamingAnalytics.notifyEnd(position);
+			} else if (videoAction == "pause") {
+				this.streamingAnalytics.notifyPause(position);
+			} else if (videoAction == "resume") {
+				this.streamingAnalytics.notifyPlay(position);
+			}
+		}
+	}
+
+	public HashMap<String, String> getPlaybackLabels(ReadableMap videoInfo) {
+		Map<String, String> playbackLabels = new HashMap<String, String>();
+		if (!videoInfo.isNull("parts")) {
+			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
+		}
+		if (!videoInfo.isNull("whatson")) {
+			playbackLabels.put("ns_st_ci", videoInfo.getString("whatson"));
+		}
+		if (!videoInfo.isNull("program")) {
+			playbackLabels.put("ns_st_pr", videoInfo.getString("program"));
+		}
+		if (!videoInfo.isNull("episode")) {
+			playbackLabels.put("ns_st_ep", videoInfo.getString("episode"));
+		}
+		if (!videoInfo.isNull("type_stream")) {
+			playbackLabels.put("ns_st_ty", videoInfo.getString("type_stream"));
+		}
+		return playbackLabels;
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
 
 }
