@@ -17,6 +17,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
 	private final ReactApplicationContext reactContext;
 
+	private StreamingAnalytics streamingAnalytics;
 	private String appName;
 
 	public RNComScoreModule(ReactApplicationContext reactContext) {
@@ -89,7 +90,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 				position = videoInfo.getInt("position");
 			}
 			if (videoAction == "start") {
-				Map<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
+				HashMap<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
 				this.streamingAnalytics.createPlaybackSession();
 				this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
 				this.streamingAnalytics.notifyPlay(position);
@@ -104,7 +105,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 	}
 
 	public HashMap<String, String> getPlaybackLabels(ReadableMap videoInfo) {
-		Map<String, String> playbackLabels = new HashMap<String, String>();
+		HashMap<String, String> playbackLabels = new HashMap<String, String>();
 		if (!videoInfo.isNull("parts")) {
 			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
 		}
