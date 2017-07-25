@@ -86,7 +86,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 		if (videoInfo != null) {
 			int position = 0;
 			if (!videoInfo.isNull("position")) {
-				position = videoInfo.getInt("position")));
+				position = videoInfo.getInt("position");
 			}
 			if (videoAction == "start") {
 				Map<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
