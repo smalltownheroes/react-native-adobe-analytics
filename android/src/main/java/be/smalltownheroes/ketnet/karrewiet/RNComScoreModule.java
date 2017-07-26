@@ -117,8 +117,8 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 	public HashMap<String, String> getPlaybackLabels(ReadableMap videoInfo) {
 		HashMap<String, String> playbackLabels = new HashMap<String, String>();
 		if (!videoInfo.isNull("length")) {
-			playbackLabels.put("ns_st_cl", String.valueOf(videoInfo.getInt("length"));
-			playbackLabels.put("ns_st_el", String.valueOf(videoInfo.getInt("length"));
+			playbackLabels.put("ns_st_cl", String.valueOf(videoInfo.getInt("length")));
+			playbackLabels.put("ns_st_el", String.valueOf(videoInfo.getInt("length")));
 		}
 		if (!videoInfo.isNull("parts")) {
 			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
