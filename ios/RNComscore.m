@@ -86,7 +86,7 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	long position = videoInfo[@"position"] ? [videoInfo[@"position"] longValue] : 0L;
 	long length =  videoInfo[@"length"] ? [videoInfo[@"length"] longValue] : 0L;
 
-	NSString *publicationDate = videoInfo[@"publication_date"] ? videoInfo[@"publication_date"] : @"",
+	NSString *publicationDate = videoInfo[@"publication_date"] ? videoInfo[@"publication_date"] : @"";
 
 	NSString *formattedPublicationDate;
 	if (![publicationDate isEqualToString:@""]) {
