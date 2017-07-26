@@ -92,8 +92,15 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			if (!videoInfo.isNull("position")) {
 				position = videoInfo.getInt("position");
 			}
+			HashMap<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
+			// Not sure of how this works since no documentation:
+			//  - is StreamAnaltics === StreamSense?
+			// 	- do we have to create a playback session once on start and set the labels once?
+			// 	- or set labels on every notify (like in the older version of comscore android)?
+			// 	see https://github.com/amzn/fire-app-builder/blob/master/ComScoreAnalyticsComponent/src/main/java/com/amazon/analytics/comscore/ComScoreAnalytics.java#L348
+			// 			[which suggests only add label/asset on start]
+			// + Has the notion of "clip" disappeared and got swapped with "playback"-session?
 			if (videoAction == "start") {
-				HashMap<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
 				this.streamingAnalytics.createPlaybackSession();
 				this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
 				this.streamingAnalytics.notifyPlay(position);
