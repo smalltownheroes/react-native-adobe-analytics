@@ -22,6 +22,16 @@ NSString *streamSenseMediaPlayer;
 NSString *streamSenseVersion;
 NSString *streamSenseChannel;
 
++ (NSString*)convertDateForStreamSense:(NSString*)dateString {
+	if (dateString == nil) return @"";
+	NSDateFormatter *formatter = [NSDateFormatter new];
+	[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+	NSDate *date = [formatter dateFromString:dateString];
+	[formatter setDateFormat:@"YYYYMMdd"];
+	NSString *formattedString = [formatter stringFromDate:date];
+	return formattedString?formattedString:@"";
+}
+
 - (dispatch_queue_t)methodQueue
 {
 	return dispatch_queue_create("com.facebook.React.AsyncLocalStorageQueue", DISPATCH_QUEUE_SERIAL);
@@ -83,8 +93,8 @@ RCT_EXPORT_METHOD(trackEvent:(NSString *)action category:(NSString *)category)
 
 RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSString *)videoAction)
 {
-	long position = videoInfo[@"position"] ? videoInfo[@"position"] : 0;
-	long length =  videoInfo[@"length"] ? videoInfo[@"length"] : 0;
+	long position = videoInfo[@"position"] ? [videoInfo[@"position"] longValue] : 0;
+	long length =  videoInfo[@"length"] ? [videoInfo[@"length"] longValue] : 0;
 	[streamSense setClip:@ {
 	   @"ns_st_cl": @(length),
 	   @"ns_st_el": @(length),
@@ -103,16 +113,6 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	} else if ([videoAction isEqualToString:@"pause"]) {
 		[streamSense notify:CSStreamSensePause position:position];
 	}
-}
-
-+ (NSString*)convertDateForStreamSense:(NSString*)dateString {
-	if (dateString == nil) return @"";
-	NSDateFormatter *formatter = [NSDateFormatter new];
-	[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
-	NSDate *date = [formatter dateFromString:dateString];
-	[formatter setDateFormat:@"YYYYMMdd"];
-	NSString *formattedString = [formatter stringFromDate:date];
-	return formattedString?formattedString:@"";
 }
 
 @end
