@@ -12,16 +12,6 @@ static CSStreamSense *streamSense;
 
 @implementation RNComScore {
 
-	+ (NSString*)convertDateForStreamSense:(NSString*)dateString {
-		if (dateString == nil) return @"";
-		NSDateFormatter *formatter = [NSDateFormatter new];
-		[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
-		NSDate *date = [formatter dateFromString:dateString];
-		[formatter setDateFormat:@"YYYYMMdd"];
-		NSString *formattedString = [formatter stringFromDate:date];
-		return formattedString?formattedString:@"";
-	}
-
 }
 
 NSString *comScoreAppName;
@@ -95,6 +85,18 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 {
 	long position = videoInfo[@"position"] ? [videoInfo[@"position"] longValue] : 0L;
 	long length =  videoInfo[@"length"] ? [videoInfo[@"length"] longValue] : 0L;
+
+	NSString *publicationDate = videoInfo[@"publication_date"] ? videoInfo[@"publication_date"] : @"",
+
+	NSString *formattedPublicationDate;
+	if (![publicationDate isEqualToString:@""]) {
+		NSDateFormatter *formatter = [NSDateFormatter new];
+		[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+		NSDate *date = [formatter dateFromString:publicationDate];
+		[formatter setDateFormat:@"YYYYMMdd"];
+		formattedPublicationDate = [formatter stringFromDate:date];
+	}
+
 	[streamSense setClip:@ {
 	   @"ns_st_cl": @(length),
 	   @"ns_st_el": @(length),
@@ -104,7 +106,7 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	   @"ns_st_pr": videoInfo[@"program"] ? videoInfo[@"program"] : @"",
 	   @"ns_st_ep": videoInfo[@"episode"] ? videoInfo[@"episode"] : @"",
 	   @"ns_st_ty": videoInfo[@"type_stream"] ? videoInfo[@"type_stream"] : @"",
-	   @"vrt_dat_id": [self convertDateForStreamSense:videoInfo[@"publication_date"]]
+	   @"vrt_dat_id": formattedPublicationDate ? formattedPublicationDate : @""
 	}];
 	if ([videoAction isEqualToString:@"play"]) {
 		[streamSense notify:CSStreamSensePlay position:position];
