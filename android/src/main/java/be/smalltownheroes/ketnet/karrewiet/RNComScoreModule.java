@@ -136,7 +136,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 		if (!videoInfo.isNull("type_stream")) {
 			playbackLabels.put("ns_st_ty", videoInfo.getString("type_stream"));
 		}
-		if (videoInfo.containsKey("publication_date")) {
+		if (!videoInfo.isNull("publication_date")) {
 			String publicationDate = videoInfo.getString("publication_date");
 			Date date = null;
 			try {
