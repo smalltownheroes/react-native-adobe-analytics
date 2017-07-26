@@ -2,6 +2,9 @@
 package be.smalltownheroes.ketnet.karrewiet;
 
 import java.util.HashMap;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -106,11 +109,16 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
 	public HashMap<String, String> getPlaybackLabels(ReadableMap videoInfo) {
 		HashMap<String, String> playbackLabels = new HashMap<String, String>();
+		if (!videoInfo.isNull("length")) {
+			playbackLabels.put("ns_st_cl", String.valueOf(videoInfo.getInt("length"));
+			playbackLabels.put("ns_st_el", String.valueOf(videoInfo.getInt("length"));
+		}
 		if (!videoInfo.isNull("parts")) {
 			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
 		}
 		if (!videoInfo.isNull("whatson")) {
 			playbackLabels.put("ns_st_ci", videoInfo.getString("whatson"));
+			playbackLabels.put("vrt_vid_id", videoInfo.getString("whatson"));
 		}
 		if (!videoInfo.isNull("program")) {
 			playbackLabels.put("ns_st_pr", videoInfo.getString("program"));
@@ -120,6 +128,16 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 		}
 		if (!videoInfo.isNull("type_stream")) {
 			playbackLabels.put("ns_st_ty", videoInfo.getString("type_stream"));
+		}
+		if (videoInfo.containsKey("publication_date")) {
+			String publicationDate = videoInfo.getString("publication_date");
+			Date date = null;
+			try {
+				date = (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")).parse(publicationDate.replaceAll("Z$", "+0000"));
+				playbackLabels.put("vrt_dat_id", (new SimpleDateFormat("EEE LLL MM yyyy HH:mm:ss ZZZZ zzz")).format(date));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
 		}
 		return playbackLabels;
 	}
