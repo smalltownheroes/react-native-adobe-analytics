@@ -72,17 +72,17 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void trackView(String view) {
 		String comScoreViewName = getAppName() + view;
-		EventInfo eventInfo = new EventInfo();
-		eventInfo.setLabel("name", comScoreViewName.replace("/", "."));
-		Analytics.notifyViewEvent(eventInfo);
+		HashMap<String,String> labels = new HashMap<String,String>();
+		labels.put("name", comScoreViewName.replace("/", "."));
+		Analytics.notifyViewEvent(labels);
 	}
 
 	@ReactMethod
 	public void trackEvent(String action, String category) {
 		String comScoreEventName = category + "." + action;
-		EventInfo eventInfo = new EventInfo();
-		eventInfo.setLabel("event", comScoreEventName);
-		Analytics.notifyViewEvent(eventInfo);
+		HashMap<String,String> labels = new HashMap<String,String>();
+		labels.put("event", comScoreEventName);
+		Analytics.notifyViewEvent(labels);
 	}
 
 	@ReactMethod
