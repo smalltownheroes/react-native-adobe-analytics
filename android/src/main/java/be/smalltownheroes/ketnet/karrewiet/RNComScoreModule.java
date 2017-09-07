@@ -76,6 +76,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 		String comScoreViewName = getAppName() + view;
 		HashMap<String,String> labels = new HashMap<String,String>();
 		labels.put("name", comScoreViewName.replace("/", "."));
+		Log.i("React-native-comscore", "================== notifyViewEvent: " + comScoreViewName.replace("/", "."));
 		Analytics.notifyViewEvent(labels);
 	}
 
@@ -89,6 +90,8 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
 	@ReactMethod
 	public void trackVideoStreaming(ReadableMap videoInfo, String videoAction) {
+		Log.i("React-native-comscore", "####### videoAction: " + videoAction);
+		Log.i("React-native-comscore", "####### videoInfo: " + videoInfo);
 		if (videoInfo != null) {
 			int position = 0;
 			if (!videoInfo.isNull("position")) {
@@ -105,16 +108,16 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			if (videoAction == "start") {
 				this.streamingAnalytics.createPlaybackSession();
 				this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
-				Log.i("React-native-comscore", "notifyPlay: " + position);
+				Log.i("React-native-comscore", "================== notifyPlay: " + position);
 				this.streamingAnalytics.notifyPlay(position);
 			} else if (videoAction == "stop") {
-				Log.i("React-native-comscore", "notifyEnd: " + position);
+				Log.i("React-native-comscore", "================== notifyEnd: " + position);
 				this.streamingAnalytics.notifyEnd(position);
 			} else if (videoAction == "pause") {
-				Log.i("React-native-comscore", "notifyPause: " + position);
+				Log.i("React-native-comscore", "================== notifyPause: " + position);
 				this.streamingAnalytics.notifyPause(position);
 			} else if (videoAction == "resume") {
-				Log.i("React-native-comscore", "notifyPlay: " + position);
+				Log.i("React-native-comscore", "================== notifyPlay: " + position);
 				this.streamingAnalytics.notifyPlay(position);
 			}
 		}
