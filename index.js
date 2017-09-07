@@ -17,6 +17,10 @@ class ComScoreTracker {
 		RNComScore.trackEvent(action, category);
 	}
 
+	trackVideoStreaming(info, action) {
+		RNComScore.trackVideoStreaming(info, action)
+	}
+
 }
 
 export default ComScoreTracker;
