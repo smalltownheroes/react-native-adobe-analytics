@@ -103,12 +103,16 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			if (videoAction == "start") {
 				this.streamingAnalytics.createPlaybackSession();
 				this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
+				System.out.println("notifyPlay: " + position);
 				this.streamingAnalytics.notifyPlay(position);
 			} else if (videoAction == "stop") {
+				System.out.println("notifyEnd: " + position);
 				this.streamingAnalytics.notifyEnd(position);
 			} else if (videoAction == "pause") {
+				System.out.println("notifyPause: " + position);
 				this.streamingAnalytics.notifyPause(position);
 			} else if (videoAction == "resume") {
+				System.out.println("notifyPlay: " + position);
 				this.streamingAnalytics.notifyPlay(position);
 			}
 		}
