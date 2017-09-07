@@ -124,29 +124,28 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
 	public HashMap<String, String> getPlaybackLabels(ReadableMap videoInfo) {
 		HashMap<String, String> playbackLabels = new HashMap<String, String>();
-		if (!videoInfo.isNull("length")) {
+		if (videoInfo.hasKey("length")) {
 			playbackLabels.put("ns_st_cl", String.valueOf(videoInfo.getInt("length")));
 			playbackLabels.put("ns_st_el", String.valueOf(videoInfo.getInt("length")));
 		}
-		if (!videoInfo.isNull("parts")) {
+		if (videoInfo.hasKey("parts")) {
 			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
 		}
-		Log.i("+whatson++++", videoInfo.getDynamic("whatson"));
-		if (videoInfo.getDynamic("whatson") != null) {
+		if (videoInfo.hasKey("whatson")) {
 			Log.i("-whatson getString----", videoInfo.getString("whatson"));
 			playbackLabels.put("ns_st_ci", videoInfo.getString("whatson"));
 			playbackLabels.put("vrt_vid_id", videoInfo.getString("whatson"));
 		}
-		if (!videoInfo.isNull("program")) {
+		if (videoInfo.hasKey("program")) {
 			playbackLabels.put("ns_st_pr", videoInfo.getString("program"));
 		}
-		if (!videoInfo.isNull("episode")) {
+		if (videoInfo.hasKey("episode")) {
 			playbackLabels.put("ns_st_ep", videoInfo.getString("episode"));
 		}
-		if (!videoInfo.isNull("type_stream")) {
+		if (videoInfo.hasKey("type_stream")) {
 			playbackLabels.put("ns_st_ty", videoInfo.getString("type_stream"));
 		}
-		if (!videoInfo.isNull("publication_date")) {
+		if (videoInfo.hasKey("publication_date")) {
 			String publicationDate = videoInfo.getString("publication_date");
 			Date date = null;
 			try {
