@@ -105,9 +105,9 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			// 			[which suggests only add label/asset on start]
 			// + Has the notion of "clip" disappeared and got swapped with "playback"-session?
 			if (videoAction == "start") {
+				Log.i("React-native-comscore", "================== notifyPlay: " + position);
 				this.streamingAnalytics.createPlaybackSession();
 				this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
-				Log.i("React-native-comscore", "================== notifyPlay: " + position);
 				this.streamingAnalytics.notifyPlay(position);
 			} else if (videoAction == "stop") {
 				Log.i("React-native-comscore", "================== notifyEnd: " + position);
