@@ -149,7 +149,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			String publicationDate = videoInfo.getString("publication_date");
 			Date date = null;
 			try {
-				date = (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")).parse(publicationDate.replaceAll("Z$", "+0000"));
+				date = (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")).parse(publicationDate);
 				playbackLabels.put("vrt_dat_id", (new SimpleDateFormat("EEE LLL MM yyyy HH:mm:ss ZZZZ zzz")).format(date));
 			} catch (ParseException e) {
 				e.printStackTrace();
