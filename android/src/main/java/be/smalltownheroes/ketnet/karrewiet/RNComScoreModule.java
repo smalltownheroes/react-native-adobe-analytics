@@ -132,7 +132,6 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
 		}
 		if (videoInfo.hasKey("whatson")) {
-			Log.i("-whatson getString----", videoInfo.getString("whatson"));
 			playbackLabels.put("ns_st_ci", videoInfo.getString("whatson"));
 			playbackLabels.put("vrt_vid_id", videoInfo.getString("whatson"));
 		}
@@ -150,7 +149,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			Date date = null;
 			try {
 				String convertedDate = publicationDate.replaceAll("Z$", ".000Z");
-				date = (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")).parse(convertedDate);
+				date = (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")).parse(convertedDate); // 2017-06-27T15:37:58.000Z
 				playbackLabels.put("vrt_dat_id", (new SimpleDateFormat("EEE LLL MM yyyy HH:mm:ss ZZZZ zzz")).format(date));
 			} catch (ParseException e) {
 				e.printStackTrace();
