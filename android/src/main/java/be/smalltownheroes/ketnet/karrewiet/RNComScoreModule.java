@@ -89,6 +89,8 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
 	@ReactMethod
 	public void trackVideoStreaming(ReadableMap videoInfo, String videoAction) {
+		Log.i("React-native-comscore", "####### videoAction: " + videoAction);
+		Log.i("React-native-comscore", "####### videoInfo: " + videoInfo);
 		if (videoInfo != null) {
 			int position = 0;
 			if (!videoInfo.isNull("position")) {
@@ -130,8 +132,8 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
 		}
 		if (!videoInfo.isNull("whatson")) {
-			Log.i('+whatson isNull++++', videoInfo.isNull("whatson"));
-			Log.i('-whatson getString----', videoInfo.getString("whatson"));
+			Log.i('+whatson isNull++++', videoInfo.isNull("whatson");
+			Log.i('-whatson getString----', videoInfo.getString("whatson");
 			playbackLabels.put("ns_st_ci", videoInfo.getString("whatson"));
 			playbackLabels.put("vrt_vid_id", videoInfo.getString("whatson"));
 		}
