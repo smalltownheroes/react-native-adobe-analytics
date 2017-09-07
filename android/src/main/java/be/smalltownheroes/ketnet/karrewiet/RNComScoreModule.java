@@ -131,8 +131,8 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 		if (!videoInfo.isNull("parts")) {
 			playbackLabels.put("ns_st_tp", videoInfo.getString("parts"));
 		}
-		if (!videoInfo.isNull("whatson")) {
-			Log.i("+whatson isNull++++", videoInfo.isNull("whatson"));
+		Log.i("+whatson++++", videoInfo.getDynamic("whatson"));
+		if (videoInfo.getDynamic("whatson") != null) {
 			Log.i("-whatson getString----", videoInfo.getString("whatson"));
 			playbackLabels.put("ns_st_ci", videoInfo.getString("whatson"));
 			playbackLabels.put("vrt_vid_id", videoInfo.getString("whatson"));
