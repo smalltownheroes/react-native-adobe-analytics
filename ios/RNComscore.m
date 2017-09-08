@@ -54,7 +54,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options)
 	labels[@"productiehuis"] = @"Small Town Heroes";
 	labels[@"waar"] = @"app";
 
-	//  SELogDebug(@"%@", labels);
+	SELogDebug(@"%@", labels);
 	[CSComScore setLabels:labels];
 
 	streamSense = [[CSStreamSense alloc] init];
@@ -83,6 +83,7 @@ RCT_EXPORT_METHOD(trackEvent:(NSString *)action category:(NSString *)category)
 
 RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSString *)videoAction)
 {
+	SELogDebug(@"[STREAMSENSE-INIT]:%@ - %@", videoInfo, videoAction);
 	long position = videoInfo[@"position"] ? [videoInfo[@"position"] longValue] : 0L;
 	long length =  videoInfo[@"length"] ? [videoInfo[@"length"] longValue] : 0L;
 
@@ -109,6 +110,7 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	   @"vrt_dat_id": formattedPublicationDate ? formattedPublicationDate : @""
 	}];
 	if ([videoAction isEqualToString:@"play"]) {
+		SELogDebug(@"[STREAMSENSE-PLAY]:%@ - %@", videoInfo, videoAction);
 		[streamSense notify:CSStreamSensePlay position:position];
 	} else if ([videoAction isEqualToString:@"stop"]) {
 		[streamSense notify:CSStreamSenseEnd position:position];
