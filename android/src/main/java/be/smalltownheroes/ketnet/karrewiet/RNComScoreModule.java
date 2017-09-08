@@ -95,7 +95,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			int position = 0;
 			if (videoInfo.hasKey("position")) {
 				position = videoInfo.getInt("position");
-				Log.i("React-native-comscore", " ¨¨¨position¨¨¨¨¨ " + position)
+				Log.i("React-native-comscore", " ¨¨¨position¨¨¨¨¨ " + position);
 			}
 			HashMap<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
 			Log.i("React-native-comscore", "******************* playbackLabels: " + playbackLabels);
