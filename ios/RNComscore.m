@@ -109,16 +109,16 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	   @"vrt_dat_id": formattedPublicationDate ? formattedPublicationDate : @""
 	}];
 	if ([videoAction isEqualToString:@"start"]) {
-		NSLog( @"notifyPlay: '%@'", videoAction );
+		// NSLog( @"notifyPlay: '%@'", videoAction );
 		[streamSense notify:CSStreamSensePlay position:position];
 	} else if ([videoAction isEqualToString:@"resume"]) {
-		NSLog( @"notifyPlay: '%@'", videoAction );
+		// NSLog( @"notifyPlay: '%@'", videoAction );
 		[streamSense notify:CSStreamSensePlay position:position];
 	} else if ([videoAction isEqualToString:@"stop"]) {
-		NSLog( @"notifyStop: '%@'", videoAction );
+		// NSLog( @"notifyStop: '%@'", videoAction );
 		[streamSense notify:CSStreamSenseEnd position:position];
 	} else if ([videoAction isEqualToString:@"pause"]) {
-		NSLog( @"notifyPause: '%@'", videoAction );
+		// NSLog( @"notifyPause: '%@'", videoAction );
 		[streamSense notify:CSStreamSensePause position:position];
 	}
 }
