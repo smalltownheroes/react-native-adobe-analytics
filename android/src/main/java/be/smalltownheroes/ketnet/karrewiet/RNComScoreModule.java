@@ -89,17 +89,14 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 
 	@ReactMethod
 	public void trackVideoStreaming(ReadableMap videoInfo, String videoAction) {
-		Log.i("React-native-comscore", "####### videoAction: " + videoAction);
-		Log.i("React-native-comscore", "####### videoInfo: " + videoInfo);
+		// Log.i("React-native-comscore", "####### videoAction ####### " + videoAction);
+		// Log.i("React-native-comscore", "####### videoInfo ####### " + videoInfo);
 		if (videoInfo != null) {
 			int position = 0;
 			if (videoInfo.hasKey("position")) {
 				position = videoInfo.getInt("position");
-				Log.i("React-native-comscore", " ¨¨¨position¨¨¨¨¨ " + position);
 			}
 			HashMap<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
-			Log.i("React-native-comscore", "******************* playbackLabels: " + playbackLabels);
-			Log.i("React-native-comscore", "is it start" + (videoAction == "start"));
 			// Not sure of how this works since no documentation:
 			//  - is StreamAnaltics === StreamSense?
 			// 	- do we have to create a playback session once on start and set the labels once?
@@ -108,18 +105,18 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 			// 			[which suggests only add label/asset on start]
 			// + Has the notion of "clip" disappeared and got swapped with "playback"-session?
 			if (videoAction.equals("start")) {
-				Log.i("React-native-comscore", "================== notifyPlay: " + position);
+				// Log.i("React-native-comscore", "####### notifyPlay ####### " + position);
 				this.streamingAnalytics.createPlaybackSession();
 				this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
 				this.streamingAnalytics.notifyPlay(position);
 			} else if (videoAction.equals("stop")) {
-				Log.i("React-native-comscore", "================== notifyEnd: " + position);
+				// Log.i("React-native-comscore", "####### notifyEnd ####### " + position);
 				this.streamingAnalytics.notifyEnd(position);
 			} else if (videoAction.equals("pause")) {
-				Log.i("React-native-comscore", "================== notifyPause: " + position);
+				// Log.i("React-native-comscore", "####### notifyPause ####### " + position);
 				this.streamingAnalytics.notifyPause(position);
 			} else if (videoAction.equals("resume")) {
-				Log.i("React-native-comscore", "================== notifyPlay: " + position);
+				// Log.i("React-native-comscore", "####### notifyPlay ####### " + position);
 				this.streamingAnalytics.notifyPlay(position);
 			}
 		}
