@@ -54,7 +54,6 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options)
 	labels[@"productiehuis"] = @"Small Town Heroes";
 	labels[@"waar"] = @"app";
 
-	SELogDebug(@"%@", labels);
 	[CSComScore setLabels:labels];
 
 	streamSense = [[CSStreamSense alloc] init];
