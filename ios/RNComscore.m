@@ -91,7 +91,7 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	NSString *formattedPublicationDate;
 	if (![publicationDate isEqualToString:@""]) {
 		NSDateFormatter *formatter = [NSDateFormatter new];
-		[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+		[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
 		NSDate *date = [formatter dateFromString:publicationDate];
 		[formatter setDateFormat:@"YYYYMMdd"];
 		formattedPublicationDate = [formatter stringFromDate:date];
@@ -108,7 +108,10 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	   @"ns_st_ty": videoInfo[@"type_stream"] ? videoInfo[@"type_stream"] : @"",
 	   @"vrt_dat_id": formattedPublicationDate ? formattedPublicationDate : @""
 	}];
-	if ([videoAction isEqualToString:@"play"]) {
+	if ([videoAction isEqualToString:@"start"]) {
+		NSLog( @"notifyPlay: '%@'", videoAction );
+		[streamSense notify:CSStreamSensePlay position:position];
+	} else if ([videoAction isEqualToString:@"resume"]) {
 		NSLog( @"notifyPlay: '%@'", videoAction );
 		[streamSense notify:CSStreamSensePlay position:position];
 	} else if ([videoAction isEqualToString:@"stop"]) {
