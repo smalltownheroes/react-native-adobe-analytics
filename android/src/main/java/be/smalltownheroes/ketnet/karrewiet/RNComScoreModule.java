@@ -97,6 +97,7 @@ public class RNComScoreModule extends ReactContextBaseJavaModule {
 				position = videoInfo.getInt("position");
 			}
 			HashMap<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
+			Log.i("React-native-comscore", "******************* playbackLabels: " + playbackLabels);
 			// Not sure of how this works since no documentation:
 			//  - is StreamAnaltics === StreamSense?
 			// 	- do we have to create a playback session once on start and set the labels once?
