@@ -83,7 +83,7 @@ RCT_EXPORT_METHOD(trackEvent:(NSString *)action category:(NSString *)category)
 
 RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSString *)videoAction)
 {
-	SELogDebug(@"[STREAMSENSE-INIT]:%@ - %@", videoInfo, videoAction);
+	NSLog( @"Video Action: '%@'", videoAction );
 	long position = videoInfo[@"position"] ? [videoInfo[@"position"] longValue] : 0L;
 	long length =  videoInfo[@"length"] ? [videoInfo[@"length"] longValue] : 0L;
 
@@ -110,11 +110,13 @@ RCT_EXPORT_METHOD(trackVideoStreaming:(NSDictionary*)videoInfo category:(NSStrin
 	   @"vrt_dat_id": formattedPublicationDate ? formattedPublicationDate : @""
 	}];
 	if ([videoAction isEqualToString:@"play"]) {
-		SELogDebug(@"[STREAMSENSE-PLAY]:%@ - %@", videoInfo, videoAction);
+		NSLog( @"notifyPlay: '%@'", videoAction );
 		[streamSense notify:CSStreamSensePlay position:position];
 	} else if ([videoAction isEqualToString:@"stop"]) {
+		NSLog( @"notifyStop: '%@'", videoAction );
 		[streamSense notify:CSStreamSenseEnd position:position];
 	} else if ([videoAction isEqualToString:@"pause"]) {
+		NSLog( @"notifyPause: '%@'", videoAction );
 		[streamSense notify:CSStreamSensePause position:position];
 	}
 }
