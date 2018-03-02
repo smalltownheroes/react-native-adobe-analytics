@@ -1,15 +1,16 @@
 
 {
-  "name": "react-native-comscore",
+  "name": "react-native-adobe-analytics",
   "version": "1.0.0",
-  "description": "Wrapper for the Comscore native library",
+  "description": "Wrapper for the Adobe Analytics library",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "react-native",
-    "comscore"
+    "adobe",
+    "analytics"
   ],
   "author": "Small Town Heroes",
   "license": "",

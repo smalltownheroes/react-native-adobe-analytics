@@ -1,26 +1,26 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNComScore } = NativeModules;
+const { RNAdobeAnalytics } = NativeModules;
 
-class ComScoreTracker {
+class AdobeAnalyticsTracker {
 
 	constructor(options) {
-		RNComScore.init(options);
+		RNAdobeAnalytics.init(options);
 	}
 
-	trackView(view) {
-		RNComScore.trackView(view);
+	trackState(state, context) {
+		RNAdobeAnalytics.trackView(view, context);
 	}
 
-	trackEvent(action, category) {
-		RNComScore.trackEvent(action, category);
+	trackAction(action, context) {
+		RNAdobeAnalytics.trackAction(action, context);
 	}
 
 	trackVideoStreaming(info, action) {
-		RNComScore.trackVideoStreaming(info, action)
+		RNAdobeAnalytics.trackVideoStreaming(info, action)
 	}
 
 }
 
-export default ComScoreTracker;
+export default AdobeAnalyticsTracker;

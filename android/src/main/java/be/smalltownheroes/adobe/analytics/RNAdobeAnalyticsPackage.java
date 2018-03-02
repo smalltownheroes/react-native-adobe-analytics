@@ -1,5 +1,5 @@
 
-package be.smalltownheroes.ketnet.karrewiet;
+package be.smalltownheroes.adobe.analytics;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,10 +10,11 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
-public class RNComScorePackage implements ReactPackage {
+
+public class RNAdobeAnalyticsPackage implements ReactPackage {
 		@Override
 		public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-			return Arrays.<NativeModule>asList(new RNComScoreModule(reactContext));
+			return Arrays.<NativeModule>asList(new RNAdobeAnalyticsModule(reactContext));
 		}
 
 		@Override
