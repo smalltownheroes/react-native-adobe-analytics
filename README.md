@@ -1,4 +1,3 @@
-
 # react-native-comscore
 
 ## Getting started
@@ -39,7 +38,4 @@
 ```javascript
 import RNComscore from 'react-native-comscore';
 
-// TODO: What to do with the module?
-RNComscore;
-```
-  
+# react-native-adobe-analytics
