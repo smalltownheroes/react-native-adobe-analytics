@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22D13F462944336FF6C827A9FBADDF4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92885B1914DB641E83AE437F90DF942F /* Foundation.framework */; };
+		48B33B6528F2D609DFACD2D60D0C0280 /* AdobeMobileSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74321EBAE0A587695E7A8CCDAE90C580 /* AdobeMobileSDK-dummy.m */; };
+		48B584AA6FF55EA25BB92DAB56EB610F /* Pods-RNAdobeAnalytics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 743CD949B64A172EF3B5E0B61F7F1FE0 /* Pods-RNAdobeAnalytics-dummy.m */; };
+		73FE3338C66ADF9FDACD1BCF4F1B0008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92885B1914DB641E83AE437F90DF942F /* Foundation.framework */; };
+		7B5D4E946C3876EEC469E92A794C907F /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ADA35E3534FA51FDB6350D3D9E85AD /* Empty.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AB121CCEA65B4FDA4643ED5FA8B8FB9E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA159B0CC73805F995F435D691595B2 /* SystemConfiguration.framework */; };
+		C3951647F947E2B1DADFAB0192CB26D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D923F5C1052B50CA1883CA42419E48AC /* UIKit.framework */; };
+		E840AB4F55E5C03512794D97FA23FEE6 /* ADBMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = F91EBDD8AD844DBDDAA00EDF30984033 /* ADBMobile.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AF225BFD98976D1C564F49EF41896B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D26D305F50D7EF2C9E9210270E00BD5;
+			remoteInfo = AdobeMobileSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08FAB2AF7D3C9352ECDBB98506A9A234 /* libAdobeMobile.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libAdobeMobile.a; path = AdobeMobileLibrary/libAdobeMobile.a; sourceTree = "<group>"; };
+		0CA159B0CC73805F995F435D691595B2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		3CC5C96B6B5898210813CE038F8A073C /* Pods-RNAdobeAnalytics-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RNAdobeAnalytics-acknowledgements.plist"; sourceTree = "<group>"; };
+		4FE6770CD9B0FD01D1A581A87EC343A2 /* AdobeMobileSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AdobeMobileSDK.xcconfig; sourceTree = "<group>"; };
+		6392F89202620B3514B5A920A9EE9B16 /* Pods-RNAdobeAnalytics-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RNAdobeAnalytics-resources.sh"; sourceTree = "<group>"; };
+		74321EBAE0A587695E7A8CCDAE90C580 /* AdobeMobileSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AdobeMobileSDK-dummy.m"; sourceTree = "<group>"; };
+		743CD949B64A172EF3B5E0B61F7F1FE0 /* Pods-RNAdobeAnalytics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RNAdobeAnalytics-dummy.m"; sourceTree = "<group>"; };
+		92885B1914DB641E83AE437F90DF942F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		964DB1090020042B6479F944BFD7B35A /* Pods-RNAdobeAnalytics-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RNAdobeAnalytics-acknowledgements.markdown"; sourceTree = "<group>"; };
+		98608D75067E85F59F50199D599FFF7D /* Pods-RNAdobeAnalytics-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RNAdobeAnalytics-frameworks.sh"; sourceTree = "<group>"; };
+		9FC4EB138B10EF6581459020657831D1 /* AdobeMobileSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AdobeMobileSDK-prefix.pch"; sourceTree = "<group>"; };
+		B130ADA7AB3911EBF06A6DB9FD575436 /* libAdobeMobileSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAdobeMobileSDK.a; path = libAdobeMobileSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8B71E01530793CE27678D780707B4D9 /* Pods-RNAdobeAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNAdobeAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
+		D5A2CAB874DABE4EBBA2FCCEC541326B /* Pods-RNAdobeAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNAdobeAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+		D923F5C1052B50CA1883CA42419E48AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D9382F60CCA72581E2C539C4D1A1CF10 /* libPods-RNAdobeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RNAdobeAnalytics.a"; path = "libPods-RNAdobeAnalytics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9ADA35E3534FA51FDB6350D3D9E85AD /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Empty.m; path = AdobeMobileLibrary/Empty.m; sourceTree = "<group>"; };
+		F91EBDD8AD844DBDDAA00EDF30984033 /* ADBMobile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADBMobile.h; path = AdobeMobileLibrary/ADBMobile.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E6283F4F5E39C38A6C8B07378EEB3F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D13F462944336FF6C827A9FBADDF4A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DC958D1408C5B3CA3F9AD7D19F9E445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73FE3338C66ADF9FDACD1BCF4F1B0008 /* Foundation.framework in Frameworks */,
+				AB121CCEA65B4FDA4643ED5FA8B8FB9E /* SystemConfiguration.framework in Frameworks */,
+				C3951647F947E2B1DADFAB0192CB26D8 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CC70DAEB2DC573D6994EDA71F1ECB78 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28226ED38E55F10A2C633DAB50C46B69 /* Pods-RNAdobeAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				964DB1090020042B6479F944BFD7B35A /* Pods-RNAdobeAnalytics-acknowledgements.markdown */,
+				3CC5C96B6B5898210813CE038F8A073C /* Pods-RNAdobeAnalytics-acknowledgements.plist */,
+				743CD949B64A172EF3B5E0B61F7F1FE0 /* Pods-RNAdobeAnalytics-dummy.m */,
+				98608D75067E85F59F50199D599FFF7D /* Pods-RNAdobeAnalytics-frameworks.sh */,
+				6392F89202620B3514B5A920A9EE9B16 /* Pods-RNAdobeAnalytics-resources.sh */,
+				B8B71E01530793CE27678D780707B4D9 /* Pods-RNAdobeAnalytics.debug.xcconfig */,
+				D5A2CAB874DABE4EBBA2FCCEC541326B /* Pods-RNAdobeAnalytics.release.xcconfig */,
+			);
+			name = "Pods-RNAdobeAnalytics";
+			path = "Target Support Files/Pods-RNAdobeAnalytics";
+			sourceTree = "<group>";
+		};
+		4CEB56C1F43CB10AAA33C571266596D8 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F91EBDD8AD844DBDDAA00EDF30984033 /* ADBMobile.h */,
+				E9ADA35E3534FA51FDB6350D3D9E85AD /* Empty.m */,
+				EFC917B78968F78E1766A412336158A8 /* Frameworks */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4D0453DEBD16ADC692A1F9EAB5038494 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FE6770CD9B0FD01D1A581A87EC343A2 /* AdobeMobileSDK.xcconfig */,
+				74321EBAE0A587695E7A8CCDAE90C580 /* AdobeMobileSDK-dummy.m */,
+				9FC4EB138B10EF6581459020657831D1 /* AdobeMobileSDK-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AdobeMobileSDK";
+			sourceTree = "<group>";
+		};
+		540D78CF1B0724BA7CD2AD8F93DB25A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C34A3D92BA5A95FA9234F1164F32823 /* AdobeMobileSDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C34A3D92BA5A95FA9234F1164F32823 /* AdobeMobileSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB56C1F43CB10AAA33C571266596D8 /* iOS */,
+				4D0453DEBD16ADC692A1F9EAB5038494 /* Support Files */,
+			);
+			name = AdobeMobileSDK;
+			path = AdobeMobileSDK;
+			sourceTree = "<group>";
+		};
+		7CC70DAEB2DC573D6994EDA71F1ECB78 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				92885B1914DB641E83AE437F90DF942F /* Foundation.framework */,
+				0CA159B0CC73805F995F435D691595B2 /* SystemConfiguration.framework */,
+				D923F5C1052B50CA1883CA42419E48AC /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				540D78CF1B0724BA7CD2AD8F93DB25A4 /* Pods */,
+				8FFA40C12C71A1EADE05F6CA4AD4D3B1 /* Products */,
+				ED4413CA31FBC0AF805E5EC34B2E0851 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8FFA40C12C71A1EADE05F6CA4AD4D3B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B130ADA7AB3911EBF06A6DB9FD575436 /* libAdobeMobileSDK.a */,
+				D9382F60CCA72581E2C539C4D1A1CF10 /* libPods-RNAdobeAnalytics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED4413CA31FBC0AF805E5EC34B2E0851 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				28226ED38E55F10A2C633DAB50C46B69 /* Pods-RNAdobeAnalytics */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EFC917B78968F78E1766A412336158A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08FAB2AF7D3C9352ECDBB98506A9A234 /* libAdobeMobile.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		607330A9DDF7C68A1A646716C3727C02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E840AB4F55E5C03512794D97FA23FEE6 /* ADBMobile.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C938E50466A026756B55D3529342B54 /* Pods-RNAdobeAnalytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4A9BD3B5BD55FA4885E49E0367530A5 /* Build configuration list for PBXNativeTarget "Pods-RNAdobeAnalytics" */;
+			buildPhases = (
+				72C5D744A9E85828B67F54E17FD6A51C /* Sources */,
+				0E6283F4F5E39C38A6C8B07378EEB3F8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31417DBF53464EBEF6AAC6B3B4736E2D /* PBXTargetDependency */,
+			);
+			name = "Pods-RNAdobeAnalytics";
+			productName = "Pods-RNAdobeAnalytics";
+			productReference = D9382F60CCA72581E2C539C4D1A1CF10 /* libPods-RNAdobeAnalytics.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7D26D305F50D7EF2C9E9210270E00BD5 /* AdobeMobileSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C722D0B2E0B140BEE0B1DBBBF1A12579 /* Build configuration list for PBXNativeTarget "AdobeMobileSDK" */;
+			buildPhases = (
+				E8A6B248DA772D917745356B217D67DF /* Sources */,
+				3DC958D1408C5B3CA3F9AD7D19F9E445 /* Frameworks */,
+				607330A9DDF7C68A1A646716C3727C02 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdobeMobileSDK;
+			productName = AdobeMobileSDK;
+			productReference = B130ADA7AB3911EBF06A6DB9FD575436 /* libAdobeMobileSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8FFA40C12C71A1EADE05F6CA4AD4D3B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D26D305F50D7EF2C9E9210270E00BD5 /* AdobeMobileSDK */,
+				2C938E50466A026756B55D3529342B54 /* Pods-RNAdobeAnalytics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72C5D744A9E85828B67F54E17FD6A51C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48B584AA6FF55EA25BB92DAB56EB610F /* Pods-RNAdobeAnalytics-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A6B248DA772D917745356B217D67DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48B33B6528F2D609DFACD2D60D0C0280 /* AdobeMobileSDK-dummy.m in Sources */,
+				7B5D4E946C3876EEC469E92A794C907F /* Empty.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31417DBF53464EBEF6AAC6B3B4736E2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AdobeMobileSDK;
+			target = 7D26D305F50D7EF2C9E9210270E00BD5 /* AdobeMobileSDK */;
+			targetProxy = 4AF225BFD98976D1C564F49EF41896B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0144740072B8CF0EF8CEBDE7E425A3F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8B71E01530793CE27678D780707B4D9 /* Pods-RNAdobeAnalytics.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26F954BA177A9A46FFFD4E23ED11D67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		6D6A9DE9741C985AC7092FDE26802090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FE6770CD9B0FD01D1A581A87EC343A2 /* AdobeMobileSDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AdobeMobileSDK/AdobeMobileSDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F0BEBC5C56AE82C157D2BFB2CB8F79A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A2CAB874DABE4EBBA2FCCEC541326B /* Pods-RNAdobeAnalytics.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E73A618F2CA92CB6C3A996563DD86C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FE6770CD9B0FD01D1A581A87EC343A2 /* AdobeMobileSDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AdobeMobileSDK/AdobeMobileSDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */,
+				26F954BA177A9A46FFFD4E23ED11D67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4A9BD3B5BD55FA4885E49E0367530A5 /* Build configuration list for PBXNativeTarget "Pods-RNAdobeAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0144740072B8CF0EF8CEBDE7E425A3F0 /* Debug */,
+				9F0BEBC5C56AE82C157D2BFB2CB8F79A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C722D0B2E0B140BEE0B1DBBBF1A12579 /* Build configuration list for PBXNativeTarget "AdobeMobileSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E73A618F2CA92CB6C3A996563DD86C8C /* Debug */,
+				6D6A9DE9741C985AC7092FDE26802090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

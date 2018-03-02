@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37F92F1620496FA8007625EC /* RNAdobeAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F92F1520496FA8007625EC /* RNAdobeAnalytics.m */; };
+		37F92F18204970B1007625EC /* ADBMobileConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 37F92F17204970B1007625EC /* ADBMobileConfig.json */; };
+		37F92F4120497FF0007625EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37F92F4020497FF0007625EC /* Info.plist */; };
+		52E5A8B1F2B04DB097D12E75 /* libPods-RNAdobeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6514C7EE86839834726663B9 /* libPods-RNAdobeAnalytics.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08BB50AD559F199762EA9500 /* Pods-RNAdobeAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAdobeAnalytics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNAdobeAnalytics/Pods-RNAdobeAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
+		37F92EFB20496BA1007625EC /* RNAdobeAnalytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNAdobeAnalytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F92F1420496F8E007625EC /* RNAdobeAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNAdobeAnalytics.h; sourceTree = "<group>"; };
+		37F92F1520496FA8007625EC /* RNAdobeAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAdobeAnalytics.m; sourceTree = "<group>"; };
+		37F92F17204970B1007625EC /* ADBMobileConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ADBMobileConfig.json; sourceTree = "<group>"; };
+		37F92F4020497FF0007625EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6514C7EE86839834726663B9 /* libPods-RNAdobeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNAdobeAnalytics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ECABA59C8240646C1F4C72B /* Pods-RNAdobeAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAdobeAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNAdobeAnalytics/Pods-RNAdobeAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37F92EF820496BA1007625EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E5A8B1F2B04DB097D12E75 /* libPods-RNAdobeAnalytics.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F65C8A1B33C27633A079A01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08BB50AD559F199762EA9500 /* Pods-RNAdobeAnalytics.debug.xcconfig */,
+				9ECABA59C8240646C1F4C72B /* Pods-RNAdobeAnalytics.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		37F92EF220496BA1007625EC = {
+			isa = PBXGroup;
+			children = (
+				37F92F4020497FF0007625EC /* Info.plist */,
+				37F92F17204970B1007625EC /* ADBMobileConfig.json */,
+				37F92F1520496FA8007625EC /* RNAdobeAnalytics.m */,
+				37F92F1420496F8E007625EC /* RNAdobeAnalytics.h */,
+				37F92EFC20496BA1007625EC /* Products */,
+				2F65C8A1B33C27633A079A01 /* Pods */,
+				EBE3F0AEA18E0416105AC9F7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		37F92EFC20496BA1007625EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37F92EFB20496BA1007625EC /* RNAdobeAnalytics.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBE3F0AEA18E0416105AC9F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6514C7EE86839834726663B9 /* libPods-RNAdobeAnalytics.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37F92EFA20496BA1007625EC /* RNAdobeAnalytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37F92F1120496BA1007625EC /* Build configuration list for PBXNativeTarget "RNAdobeAnalytics" */;
+			buildPhases = (
+				F6F6C03D280B50283B6E9692 /* [CP] Check Pods Manifest.lock */,
+				37F92EF720496BA1007625EC /* Sources */,
+				37F92EF820496BA1007625EC /* Frameworks */,
+				37F92EF920496BA1007625EC /* Resources */,
+				36CBB98EC17E377E1D44AF33 /* [CP] Embed Pods Frameworks */,
+				9FD017FABCDA4DD2EB762ADA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNAdobeAnalytics;
+			productName = RNAdobeAnalytics;
+			productReference = 37F92EFB20496BA1007625EC /* RNAdobeAnalytics.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37F92EF320496BA1007625EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = VRT;
+				TargetAttributes = {
+					37F92EFA20496BA1007625EC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 37F92EF620496BA1007625EC /* Build configuration list for PBXProject "RNAdobeAnalytics" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37F92EF220496BA1007625EC;
+			productRefGroup = 37F92EFC20496BA1007625EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37F92EFA20496BA1007625EC /* RNAdobeAnalytics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37F92EF920496BA1007625EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F92F4120497FF0007625EC /* Info.plist in Resources */,
+				37F92F18204970B1007625EC /* ADBMobileConfig.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36CBB98EC17E377E1D44AF33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNAdobeAnalytics/Pods-RNAdobeAnalytics-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FD017FABCDA4DD2EB762ADA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNAdobeAnalytics/Pods-RNAdobeAnalytics-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6F6C03D280B50283B6E9692 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNAdobeAnalytics-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37F92EF720496BA1007625EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F92F1620496FA8007625EC /* RNAdobeAnalytics.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		37F92F0F20496BA1007625EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ADOBE_MOBILE_CONFIG = ADBMobileConfig;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		37F92F1020496BA1007625EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ADOBE_MOBILE_CONFIG = ADBMobileConfig;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37F92F1220496BA1007625EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08BB50AD559F199762EA9500 /* Pods-RNAdobeAnalytics.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79BMQESM94;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.vrt.RNAdobeAnalytics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37F92F1320496BA1007625EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ECABA59C8240646C1F4C72B /* Pods-RNAdobeAnalytics.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79BMQESM94;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.vrt.RNAdobeAnalytics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37F92EF620496BA1007625EC /* Build configuration list for PBXProject "RNAdobeAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F92F0F20496BA1007625EC /* Debug */,
+				37F92F1020496BA1007625EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37F92F1120496BA1007625EC /* Build configuration list for PBXNativeTarget "RNAdobeAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F92F1220496BA1007625EC /* Debug */,
+				37F92F1320496BA1007625EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37F92EF320496BA1007625EC /* Project object */;
+}
