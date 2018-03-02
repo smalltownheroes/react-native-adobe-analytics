@@ -106,15 +106,6 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 				case String:
 					deconstructedMap.put(key, readableMap.getString(key));
 					break;
-				case Integer:
-					deconstructedMap.put(key, readableMap.getInt(key));
-					break;
-				case Map:
-					deconstructedMap.put(key, convertReadableMapToHashMap(readableMap.getMap(key)));
-					break;
-				// case Array:
-				// 	deconstructedMap.put(key, convertReadableMapToHashMap(readableMap.getArray(key)));
-				// 	break;
 				default:
 					throw new IllegalArgumentException("Could not convert object with key: " + key + ".");
 			}
