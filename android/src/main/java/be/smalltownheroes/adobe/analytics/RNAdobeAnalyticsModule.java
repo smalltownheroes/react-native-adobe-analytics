@@ -43,12 +43,14 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void trackState(String state, ReadableMap contextData) {
 		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("React-native-adobe-analytics", "####### trackState ####### " + state);
 		Analytics.trackState(state, contextMap);
 	}
 
 	@ReactMethod
 	public void trackAction(String action, ReadableMap contextData) {
 		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("React-native-adobe-analytics", "####### trackAction ####### " + action);
 		Analytics.trackAction(action, contextMap);
 	}
 
