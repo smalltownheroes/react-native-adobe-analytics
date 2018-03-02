@@ -1,6 +1,7 @@
 
 package be.smalltownheroes.adobe.analytics;
 
+import java.util.Map;
 import java.util.HashMap;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,7 +14,8 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.ReadableMapKeySetIterator;
 
 import com.adobe.mobile.Config;
 import com.adobe.mobile.Analytics;
@@ -110,9 +112,9 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 				case Map:
 					deconstructedMap.put(key, convertReadableMapToHashMap(readableMap.getMap(key)));
 					break;
-				case Array:
-					deconstructedMap.put(key, convertReadableMapToHashMap(readableMap.getArray(key)));
-					break;
+				// case Array:
+				// 	deconstructedMap.put(key, convertReadableMapToHashMap(readableMap.getArray(key)));
+				// 	break;
 				default:
 					throw new IllegalArgumentException("Could not convert object with key: " + key + ".");
 			}
