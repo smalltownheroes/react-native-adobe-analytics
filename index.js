@@ -10,7 +10,7 @@ class AdobeAnalyticsTracker {
 	}
 
 	trackState(state, context) {
-		RNAdobeAnalytics.trackView(view, context);
+		RNAdobeAnalytics.trackState(state, context);
 	}
 
 	trackAction(action, context) {
@@ -18,7 +18,7 @@ class AdobeAnalyticsTracker {
 	}
 
 	trackVideoStreaming(info, action) {
-		RNAdobeAnalytics.trackVideoStreaming(info, action)
+		RNAdobeAnalytics.trackVideoStreaming(info, action);
 	}
 
 }
