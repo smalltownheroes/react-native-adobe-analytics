@@ -6,7 +6,11 @@
 //  Copyright © 2018 VRT. All rights reserved.
 //
 
+#if __has_include(<React/RCTBridgeModule.h>)
 #import <React/RCTBridgeModule.h>
+#else
+#import "RCTBridgeModule.h"
+#endif
 
 @interface RNAdobeAnalytics : NSObject <RCTBridgeModule>
 
