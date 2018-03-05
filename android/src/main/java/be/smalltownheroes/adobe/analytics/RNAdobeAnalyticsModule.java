@@ -55,7 +55,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public void trackVideo(String action, ReadableMap settings, final Callback mediaCallback) {
+	public void trackVideo(String action, ReadableMap settings) {
 		Log.i("RN-adobe-analytics", "####### trackVideo ####### " + action);
 		switch (action) {
 			case "open": {
@@ -64,16 +64,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 				String playerName = settings.getString("playerName");
 				String playerId = settings.getString("playerId");
 				final MediaSettings mediaSettings = Media.settingsWith(name, length, playerName, playerId);
-				Media.open(mediaSettings, new Media.MediaCallback() {
-					@Override
-					public void call(Object item) {
-						Log.i("RN-adobe-analytics", "####### trackVideo mediaCallback ####### " + item);
-						if (mediaCallback != null) {
-							MediaState mediaState = (MediaState) item;
-							mediaCallback.invoke(mediaState.name, mediaState.offset, mediaState.timePlayed);
-						}
-					}
-				});
+				Media.open(mediaSettings);
 				break;
 			}
 			case "close": {
