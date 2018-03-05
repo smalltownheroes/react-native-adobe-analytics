@@ -17,8 +17,8 @@ class AdobeAnalyticsTracker {
 		RNAdobeAnalytics.trackAction(action, context);
 	}
 
-	trackVideo(action, settings) {
-		RNAdobeAnalytics.trackVideo(action, settings);
+	trackVideo(action, settings, cb) {
+		RNAdobeAnalytics.trackVideo(action, settings, cb);
 	}
 
 }
