@@ -67,7 +67,9 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 					@Override
 					public void call(Object item) {
 						Log.i("RN-adobe-analytics", "####### trackVideo mediaCallback ####### " + item);
-						mediaCallback.invoke(item);
+						if (mediaCallback !== null) {
+							mediaCallback.invoke(item);
+						}
 					}
 				});
 				break;
