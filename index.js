@@ -60,14 +60,14 @@ AdobeAnalyticsTrackState.propTypes = {
 // TrackAction component
 // ------------------------------------
 
-export const AdobeAnalyticsTrackAction = ({ state, contextData }) => {
-  AdobeAnalyticsAPI.trackAction(state, contextData);
+export const AdobeAnalyticsTrackAction = ({ action, contextData }) => {
+  AdobeAnalyticsAPI.trackAction(action, contextData);
 
   return null;
 };
 
 AdobeAnalyticsTrackAction.propTypes = {
-  state: PropTypes.string.isRequired,
+  action: PropTypes.string.isRequired,
   contextData: PropTypes.object
 };
 
