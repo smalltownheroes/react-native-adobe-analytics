@@ -64,7 +64,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 				String playerName = settings.getString("playerName");
 				String playerId = settings.getString("playerId");
 				final MediaSettings mediaSettings = Media.settingsWith(name, length, playerName, playerId);
-				Media.open(mediaSettings);
+				Media.open(mediaSettings, null);
 				break;
 			}
 			case "close": {
