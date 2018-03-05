@@ -18,6 +18,7 @@ import com.adobe.mobile.Config;
 import com.adobe.mobile.Analytics;
 import com.adobe.mobile.MediaSettings;
 import com.adobe.mobile.Media;
+import com.adobe.mobile.MediaState;
 
 public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
@@ -62,13 +63,14 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 				Double length = settings.getDouble("length");
 				String playerName = settings.getString("playerName");
 				String playerId = settings.getString("playerId");
-				MediaSettings mediaSettings = Media.settingsWith(name, length, playerName, playerId);
+				final MediaSettings mediaSettings = Media.settingsWith(name, length, playerName, playerId);
 				Media.open(mediaSettings, new Media.MediaCallback() {
 					@Override
 					public void call(Object item) {
 						Log.i("RN-adobe-analytics", "####### trackVideo mediaCallback ####### " + item);
 						if (mediaCallback != null) {
-							mediaCallback.invoke(item);
+							MediaState mediaState = (MediaState) item;
+							mediaCallback.invoke(mediaState.name, mediaState.offset, mediaState.timePlayed);
 						}
 					}
 				});
