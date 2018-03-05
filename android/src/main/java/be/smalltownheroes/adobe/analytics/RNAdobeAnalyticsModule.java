@@ -67,7 +67,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 					@Override
 					public void call(Object item) {
 						Log.i("RN-adobe-analytics", "####### trackVideo mediaCallback ####### " + item);
-						if (mediaCallback !== null) {
+						if (mediaCallback != null) {
 							mediaCallback.invoke(item);
 						}
 					}
@@ -95,6 +95,12 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 				String name = settings.getString("name");
 				Double offset = settings.getDouble("offset");
 				Media.complete(name, offset);
+				break;
+			}
+			case "track": {
+				String name = settings.getString("name");
+				Map<String, Object> contextMap = convertReadableMapToHashMap(settings);
+				Media.track(name, contextMap);
 				break;
 			}
 			default: {
