@@ -1,20 +1,17 @@
-
 {
   "name": "react-native-adobe-analytics",
-  "version": "1.0.0",
-  "description": "Wrapper for the Adobe Analytics library",
+  "version": "1.0.2",
+  "description": "React Native bridge for the Adobe Analytics",
+  "author": "Small Town Heroes & VRT",
+  "license": "MIT",
+  "homepage": "https://github.com/smalltownheroes/react-native-adobe-analytics",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "react-native",
     "adobe",
     "analytics"
   ],
-  "author": "Small Town Heroes",
-  "license": "",
   "peerDependencies": {
-    "react-native": "0.43.3"
+    "react-native": ">=0.40.0"
   }
 }
