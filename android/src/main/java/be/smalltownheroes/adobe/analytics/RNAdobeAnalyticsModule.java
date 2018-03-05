@@ -3,9 +3,6 @@ package be.smalltownheroes.adobe.analytics;
 
 import java.util.Map;
 import java.util.HashMap;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import android.util.Log;
 
@@ -19,6 +16,9 @@ import com.facebook.react.bridge.ReadableMapKeySetIterator;
 
 import com.adobe.mobile.Config;
 import com.adobe.mobile.Analytics;
+import com.adobe.mobile.MediaSettings;
+import com.adobe.mobile.Media;
+import com.adobe.mobile.MediaState;
 
 public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
@@ -43,50 +43,64 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void trackState(String state, ReadableMap contextData) {
 		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
-		Log.i("React-native-adobe-analytics", "####### trackState ####### " + state);
+		Log.i("RN-adobe-analytics", "####### trackState ####### " + state);
 		Analytics.trackState(state, contextMap);
 	}
 
 	@ReactMethod
 	public void trackAction(String action, ReadableMap contextData) {
 		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
-		Log.i("React-native-adobe-analytics", "####### trackAction ####### " + action);
+		Log.i("RN-adobe-analytics", "####### trackAction ####### " + action);
 		Analytics.trackAction(action, contextMap);
 	}
 
 	@ReactMethod
-	public void trackVideoStreaming(ReadableMap videoInfo, String videoAction) {
-		// Log.i("React-native-comscore", "####### videoAction ####### " + videoAction);
-		// Log.i("React-native-comscore", "####### videoInfo ####### " + videoInfo);
-		// if (videoInfo != null) {
-		// 	int position = 0;
-		// 	if (videoInfo.hasKey("position")) {
-		// 		position = videoInfo.getInt("position");
-		// 	}
-		// 	HashMap<String, String> playbackLabels = this.getPlaybackLabels(videoInfo);
-		// 	// Not sure of how this works since no documentation:
-		// 	//  - is StreamAnaltics === StreamSense?
-		// 	// 	- do we have to create a playback session once on start and set the labels once?
-		// 	// 	- or set labels on every notify (like in the older version of comscore android)?
-		// 	// 	see https://github.com/amzn/fire-app-builder/blob/master/ComScoreAnalyticsComponent/src/main/java/com/amazon/analytics/comscore/ComScoreAnalytics.java#L348
-		// 	// 			[which suggests only add label/asset on start]
-		// 	// + Has the notion of "clip" disappeared and got swapped with "playback"-session?
-		// 	if (videoAction.equals("start")) {
-		// 		// Log.i("React-native-comscore", "####### notifyPlay ####### " + position);
-		// 		this.streamingAnalytics.createPlaybackSession();
-		// 		this.streamingAnalytics.getPlaybackSession().setLabels(playbackLabels);
-		// 		this.streamingAnalytics.notifyPlay(position);
-		// 	} else if (videoAction.equals("stop")) {
-		// 		// Log.i("React-native-comscore", "####### notifyEnd ####### " + position);
-		// 		this.streamingAnalytics.notifyEnd(position);
-		// 	} else if (videoAction.equals("pause")) {
-		// 		// Log.i("React-native-comscore", "####### notifyPause ####### " + position);
-		// 		this.streamingAnalytics.notifyPause(position);
-		// 	} else if (videoAction.equals("resume")) {
-		// 		// Log.i("React-native-comscore", "####### notifyPlay ####### " + position);
-		// 		this.streamingAnalytics.notifyPlay(position);
-		// 	}
-		// }
+	public void trackVideo(String action, ReadableMap settings) {
+		Log.i("RN-adobe-analytics", "####### trackVideo ####### " + action);
+		switch (action) {
+			case "open": {
+				String name = settings.getString("name");
+				Double length = settings.getDouble("length");
+				String playerName = settings.getString("playerName");
+				String playerId = settings.getString("playerId");
+				final MediaSettings mediaSettings = Media.settingsWith(name, length, playerName, playerId);
+				Media.open(mediaSettings, null);
+				break;
+			}
+			case "close": {
+				String name = settings.getString("name");
+				Media.close(name);
+				break;
+			}
+			case "play": {
+				String name = settings.getString("name");
+				Double offset = settings.getDouble("offset");
+				Media.play(name, offset);
+				break;
+			}
+			case "stop": {
+				String name = settings.getString("name");
+				Double offset = settings.getDouble("offset");
+				Media.stop(name, offset);
+				break;
+			}
+			case "complete": {
+				String name = settings.getString("name");
+				Double offset = settings.getDouble("offset");
+				Media.complete(name, offset);
+				break;
+			}
+			case "track": {
+				String name = settings.getString("name");
+				Map<String, Object> contextMap = convertReadableMapToHashMap(settings);
+				Media.track(name, contextMap);
+				break;
+			}
+			default: {
+				Log.w("RN-adobe-analytics", "Unknown video track action:" + action);
+				break;
+			}
+		}
 	}
 
 	private Map<String, Object> convertReadableMapToHashMap(ReadableMap readableMap) {
