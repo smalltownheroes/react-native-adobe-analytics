@@ -241,7 +241,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../ios/Frameworks",
-					"$(PROJECT_DIR)/../../../ios/Pods/AdobeMobileSDK",
+					"$(PROJECT_DIR)/../../../ios/Pods/AdobeMobileSDK/AdobeMobileLibrary",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../react-native/React",
@@ -262,7 +262,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../ios/Frameworks",
-					"$(PROJECT_DIR)/../../../ios/Pods/AdobeMobileSDK",
+					"$(PROJECT_DIR)/../../../ios/Pods/AdobeMobileSDK/AdobeMobileLibrary",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../react-native/React",
