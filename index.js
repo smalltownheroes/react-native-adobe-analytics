@@ -1,26 +1,87 @@
-
 import { NativeModules } from 'react-native';
+import { PropTypes } from 'prop-types';
 
 const { RNAdobeAnalytics } = NativeModules;
 
-class AdobeAnalyticsTracker {
+// ------------------------------------
+// API
+// ------------------------------------
 
-	constructor(options) {
-		RNAdobeAnalytics.init(options);
-	}
+export class AdobeAnalyticsAPI {
+  static init(debug = false) {
+    RNAdobeAnalytics.init({ debug });
+  }
 
-	trackState(state, context) {
-		RNAdobeAnalytics.trackState(state, context);
-	}
+  static trackState(state, contextData = {}) {
+    RNAdobeAnalytics.trackState(state, contextData);
+  }
 
-	trackAction(action, context) {
-		RNAdobeAnalytics.trackAction(action, context);
-	}
+  static trackAction(action, contextData = {}) {
+    RNAdobeAnalytics.trackAction(action, contextData);
+  }
 
-	trackVideo(action, settings) {
-		RNAdobeAnalytics.trackVideo(action, settings);
-	}
-
+  static trackVideo(action, settings = {}) {
+    RNAdobeAnalytics.trackVideo(action, settings);
+  }
 }
 
-export default AdobeAnalyticsTracker;
+new AdobeAnalyticsAPI();
+
+// ------------------------------------
+// Init component
+// ------------------------------------
+
+export const AdobeAnalytics = ({ debug }) => {
+  AdobeAnalyticsAPI.init(debug);
+
+  return null;
+};
+
+AdobeAnalytics.propTypes = {
+  debug: PropTypes.bool
+};
+
+// ------------------------------------
+// TrackState component
+// ------------------------------------
+
+export const AdobeAnalyticsTrackState = ({ state, contextData }) => {
+  AdobeAnalyticsAPI.trackState(state, contextData);
+
+  return null;
+};
+
+AdobeAnalyticsTrackState.propTypes = {
+  state: PropTypes.string.isRequired,
+  contextData: PropTypes.object
+};
+
+// ------------------------------------
+// TrackAction component
+// ------------------------------------
+
+export const AdobeAnalyticsTrackAction = ({ state, contextData }) => {
+  AdobeAnalyticsAPI.trackAction(state, contextData);
+
+  return null;
+};
+
+AdobeAnalyticsTrackAction.propTypes = {
+  state: PropTypes.string.isRequired,
+  contextData: PropTypes.object
+};
+
+// ------------------------------------
+// AdobeAnalytics component
+// ------------------------------------
+
+export const AdobeAnalyticsTrackVideo = ({ action, settings }) => {
+  AdobeAnalyticsAPI.trackVideo(action, settings);
+
+  return null;
+};
+
+AdobeAnalyticsTrackVideo.propTypes = {
+  action: PropTypes.string.isRequired,
+  settings: PropTypes.object
+};

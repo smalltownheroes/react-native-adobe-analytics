@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "react-app"
+  ],
+  "plugins": [],
+  "rules": {
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "no-multi-spaces": "error",
+    "jsx-a11y/href-no-hash": "off"
+  },
+  "env": {
+    "jasmine": true
+  },
+  "globals": {
+    "browser": true
+  }
+}

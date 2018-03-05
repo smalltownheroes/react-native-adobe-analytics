@@ -24,7 +24,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(initialize: (NSDictionary *)options)
+RCT_EXPORT_METHOD(init: (NSDictionary *)options)
 {
     NSString *config = [[NSBundle mainBundle] pathForResource:@"ADBMobileConfig" ofType:@"json"];
     
