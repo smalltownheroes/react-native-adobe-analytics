@@ -29,7 +29,7 @@ RCT_EXPORT_METHOD(init: (NSDictionary *)options)
     NSString *config = [[NSBundle mainBundle] pathForResource:@"ADBMobileConfig" ofType:@"json"];
     
     [ADBMobile collectLifecycleData];
-    [ADBMobile overrideConfigPath:[[NSBundle mainBundle] pathForResource:config ofType:@"json"]];
+    [ADBMobile overrideConfigPath:config];
     
     BOOL debug = options[@"debug"];
     

@@ -24,6 +24,12 @@ Add this to your Podfile and run `pod install`
 pod 'AdobeMobileSDK', '~> 4.14.1'
 ```
 
+When using `!use_frameworks` in your Podfile, add this to your `didFinishLaunchingWithOptions` function in AppDelegate.m
+
+```
+[ADBMobile overrideConfigPath:[[NSBundle mainBundle] pathForResource:@"ADBMobileConfig" ofType:@"json"]];
+```
+
 ## Usage
 ### Javascript API
 Import the javascript class:
