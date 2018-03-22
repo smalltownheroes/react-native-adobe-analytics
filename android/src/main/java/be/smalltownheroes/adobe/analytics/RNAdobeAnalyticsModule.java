@@ -14,6 +14,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableType;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
+import com.facebook.react.bridge.LifecycleEventListener;
 
 import com.adobe.mobile.Config;
 import com.adobe.mobile.Analytics;
