@@ -27,6 +27,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	public RNAdobeAnalyticsModule(ReactApplicationContext reactContext) {
 		super(reactContext);
 		this.reactContext = reactContext;
+		Config.setContext(this.reactContext.getApplicationContext());
 	}
 
 	@Override
@@ -36,7 +37,6 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
 	@ReactMethod
 	public void init(ReadableMap options) {
-		Config.setContext(this.reactContext);
 		Config.setDebugLogging(options.getBoolean("debug"));
 	}
 
