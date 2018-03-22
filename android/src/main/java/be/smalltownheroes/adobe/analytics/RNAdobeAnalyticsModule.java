@@ -23,11 +23,31 @@ import com.adobe.mobile.MediaState;
 public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
 	private final ReactApplicationContext reactContext;
+	private final Activity activity = getCurrentActivity();
+
+	private final LifecycleEventListener mLifecycleEventListener = new LifecycleEventListener() {
+		@Override
+		public void onHostResume() {
+			Log.d("RESUME", "LIFECYCLE");
+			Config.collectLifecycleData(activity);
+		}
+
+		@Override
+		public void onHostPause() {
+			Config.pauseCollectingLifecycleData();
+		}
+
+		@Override
+		public void onHostDestroy() {
+
+		}
+	};
 
 	public RNAdobeAnalyticsModule(ReactApplicationContext reactContext) {
 		super(reactContext);
 		this.reactContext = reactContext;
 		Config.setContext(this.reactContext.getApplicationContext());
+		reactContext.addLifecycleEventListener(mLifecycleEventListener);
 	}
 
 	@Override
