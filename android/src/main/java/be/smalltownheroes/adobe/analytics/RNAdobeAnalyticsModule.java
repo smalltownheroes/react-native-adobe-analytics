@@ -126,30 +126,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	}
 
 	private Map<String, Object> convertReadableMapToHashMap(ReadableMap readableMap) {
-		ReadableMapKeySetIterator iterator = readableMap.keySetIterator();
-		HashMap<String, Object> deconstructedMap = new HashMap<>();
-		while (iterator.hasNextKey()) {
-			String key = iterator.nextKey();
-			ReadableType type = readableMap.getType(key);
-			switch (type) {
-				case Null:
-					deconstructedMap.put(key, null);
-					break;
-				case Boolean:
-					deconstructedMap.put(key, readableMap.getBoolean(key));
-					break;
-				case Number:
-					deconstructedMap.put(key, readableMap.getDouble(key));
-					break;
-				case String:
-					deconstructedMap.put(key, readableMap.getString(key));
-					break;
-				default:
-					throw new IllegalArgumentException("Could not convert object with key: " + key + ".");
-			}
-
-		}
-		return deconstructedMap;
+		return readableMap.toHashMap();
 	}
 
 }
