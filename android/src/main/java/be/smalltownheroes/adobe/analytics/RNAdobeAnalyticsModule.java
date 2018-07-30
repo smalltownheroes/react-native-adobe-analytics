@@ -76,6 +76,34 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 		Analytics.trackAction(action, contextMap);
 	}
 
+//Adding timed action events - start, update and end. Also get Marketing cloud ID function
+
+
+	@ReactMethod
+	public void trackTimedActionStart(String action, ReadableMap contextData) {
+		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("RN-adobe-analytics", "####### trackTimesActionStart ####### " + action);
+		Analytics.trackTimedActionStart(action, contextMap);
+	}
+
+
+
+	@ReactMethod
+	public void trackTimedActionUpdate(String action, ReadableMap contextData) {
+		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("RN-adobe-analytics", "####### trackTimesActionUpdate ####### " + action);
+		Analytics.trackTimedActionUpdate(action, contextMap);
+	}
+
+	@ReactMethod
+	public void trackTimedActionEnd(String action) {
+		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("RN-adobe-analytics", "####### trackTimesActionEnd ####### " + action);
+		Analytics.trackTimedActionEnd(action,  new Analytics.TimedActionBlock<Boolean>());
+	}
+
+//End of updates
+
 	@ReactMethod
 	public void trackVideo(String action, ReadableMap settings) {
 		Log.i("RN-adobe-analytics", "####### trackVideo ####### " + action);

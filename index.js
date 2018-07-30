@@ -23,6 +23,24 @@ export class AdobeAnalyticsAPI {
   static trackVideo(action, settings = {}) {
     RNAdobeAnalytics.trackVideo(action, settings);
   }
+
+    static trackTimedActionStart(action, contextData = {}) {
+    RNAdobeAnalytics.trackTimedActionStart(action, contextData);
+  }
+
+
+  static trackTimedActionUpdate(action, contextData = {}) {
+    RNAdobeAnalytics.trackTimedActionUpdate(action, contextData);
+  }
+
+//Open question
+
+  static trackTimedActionEnd(action) {
+    RNAdobeAnalytics.trackTimedActionEnd(action);
+  }
+
+
+
 }
 
 new AdobeAnalyticsAPI();

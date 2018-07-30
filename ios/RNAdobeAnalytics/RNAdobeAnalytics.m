@@ -46,4 +46,22 @@ RCT_EXPORT_METHOD(trackState: (NSString *)state contextData:(NSDictionary *)cont
     [ADBMobile trackState:state data:contextData];
 }
 
+//Extending the framework to include timed actions and tracking marketing cloud ID for user
+
+RCT_EXPORT_METHOD(trackTimedActionStart: (NSString *)action contextData:(NSDictionary *)contextData) {
+    [ADBMobile trackTimedActionStart:action data:contextData];
+}
+
+RCT_EXPORT_METHOD(trackTimedActionUpdate: (NSString *)action contextData:(NSDictionary *)contextData) {
+    [ADBMobile trackTimedActionUpdate:action data:contextData];
+}
+
+
+RCT_EXPORT_METHOD(trackTimedActionEnd: (NSString *)action) {
+    [ADBMobile trackTimedActionEnd:action logic: nil];
+}
+
+
+
+
 @end
