@@ -21,6 +21,8 @@ import com.adobe.mobile.Analytics;
 import com.adobe.mobile.MediaSettings;
 import com.adobe.mobile.Media;
 import com.adobe.mobile.MediaState;
+import com.adobe.mobile.Visitor;
+
 
 public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
@@ -60,6 +62,11 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void init(ReadableMap options) {
 		Config.setDebugLogging(options.getBoolean("debug"));
+	}
+
+	@ReactMethod
+	public void urlWithAdobeVisitorInfo(String url) {
+		return  Visitor.appendToURL(url);
 	}
 
 	@ReactMethod
