@@ -15,6 +15,7 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableType;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.LifecycleEventListener;
+import com.facebook.react.bridge.Promise;
 
 import com.adobe.mobile.Config;
 import com.adobe.mobile.Analytics;
@@ -65,10 +66,10 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public String urlWithAdobeVisitorInfo(String url) {
+	public void urlWithAdobeVisitorInfo(String url, Promise promise) {
 		String newUrl = Visitor.appendToURL(url);
 		Log.i("RN-adobe-analytics", "####### urlWithAdobeVisitorInfo ####### " + newUrl);
-		return newUrl;
+		promise.resolve(newUrl);
 	}
 
 	@ReactMethod

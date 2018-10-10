@@ -12,8 +12,8 @@ export class AdobeAnalyticsAPI {
     RNAdobeAnalytics.init({ debug });
   }
 
-  static urlWithAdobeVisitorInfo(url) {
-    return RNAdobeAnalytics.urlWithAdobeVisitorInfo(url);
+  static urlWithAdobeVisitorInfo(url, promise) {
+    return RNAdobeAnalytics.urlWithAdobeVisitorInfo(url, promise);
   }
 
   static trackState(state, contextData = {}) {
