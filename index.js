@@ -13,7 +13,7 @@ export class AdobeAnalyticsAPI {
   }
 
   static urlWithAdobeVisitorInfo(url) {
-    RNAdobeAnalytics.urlWithAdobeVisitorInfo(url);
+    return RNAdobeAnalytics.urlWithAdobeVisitorInfo(url);
   }
 
   static trackState(state, contextData = {}) {
