@@ -69,7 +69,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	public void urlWithAdobeVisitorInfo(String url, Promise promise) {
 		String newUrl = Visitor.appendToURL(url);
 		Log.i("RN-adobe-analytics", "####### urlWithAdobeVisitorInfo ####### " + newUrl);
-		if(newUrl != null && !str.isEmpty()) {
+		if(newUrl != null && !newUrl.isEmpty()) {
 			promise.resolve(newUrl);
 		} else {
 			promise.reject("Could not generate tracking URL");
