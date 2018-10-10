@@ -65,7 +65,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public void urlWithAdobeVisitorInfo(String url) {
+	public String urlWithAdobeVisitorInfo(String url) {
 		return  Visitor.appendToURL(url);
 	}
 
