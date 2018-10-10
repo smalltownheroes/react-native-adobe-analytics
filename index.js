@@ -12,6 +12,10 @@ export class AdobeAnalyticsAPI {
     RNAdobeAnalytics.init({ debug });
   }
 
+  static urlWithAdobeVisitorInfo(url) {
+    RNAdobeAnalytics.urlWithAdobeVisitorInfo(url);
+  }
+
   static trackState(state, contextData = {}) {
     RNAdobeAnalytics.trackState(state, contextData);
   }
@@ -24,23 +28,19 @@ export class AdobeAnalyticsAPI {
     RNAdobeAnalytics.trackVideo(action, settings);
   }
 
-    static trackTimedActionStart(action, contextData = {}) {
+  static trackTimedActionStart(action, contextData = {}) {
     RNAdobeAnalytics.trackTimedActionStart(action, contextData);
   }
-
 
   static trackTimedActionUpdate(action, contextData = {}) {
     RNAdobeAnalytics.trackTimedActionUpdate(action, contextData);
   }
 
-//Open question
+  //Open question
 
   static trackTimedActionEnd(action) {
     RNAdobeAnalytics.trackTimedActionEnd(action);
   }
-
-
-
 }
 
 new AdobeAnalyticsAPI();
