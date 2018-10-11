@@ -41,12 +41,15 @@ RCT_EXPORT_METHOD(init: (NSDictionary *)options)
 RCT_EXPORT_METHOD(urlWithAdobeVisitorInfo: (NSString *)url urlWithAdobeVisitorInfoWithResolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
     NSURL *urlWithVisitorData = [ADBMobile visitorAppendToURL:url];
-    NSLog(@"Input url: %@", url)
-    NSLog(@"Visitor url: %@", urlWithVisitorData.absoluteString)
+    NSLog(@"Input url: %@", url);
+    NSLog(@"Visitor url: %@", urlWithVisitorData.absoluteString);
     if(urlWithVisitorData) {
         resolve(urlWithVisitorData.absoluteString);
     } else {
-        reject("Could not generate tracking URL");
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
+                                             code:1000
+                                         userInfo:@{@"URL", @"is broken"}];
+        reject(@"no_url",@"There is no URL",error);
     }
     
 }
