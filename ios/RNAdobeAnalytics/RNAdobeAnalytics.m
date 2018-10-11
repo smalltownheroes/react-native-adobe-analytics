@@ -41,10 +41,10 @@ RCT_EXPORT_METHOD(init: (NSDictionary *)options)
 RCT_EXPORT_METHOD(urlWithAdobeVisitorInfo: (NSString *)url urlWithAdobeVisitorInfoWithResolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
     NSURL *urlWithVisitorData = [ADBMobile visitorAppendToURL:url];
-    if([urlWithVisitorData length] == 0) {
-        reject("Could not generate tracking URL");
+    if(urlWithVisitorData) {
+        resolve(urlWithVisitorData.absoluteString);
     } else {
-        resolve(urlWithVisitorData);
+        reject("Could not generate tracking URL");
     }
 }
 
