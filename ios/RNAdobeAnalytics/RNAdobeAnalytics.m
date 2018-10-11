@@ -38,6 +38,16 @@ RCT_EXPORT_METHOD(init: (NSDictionary *)options)
     }
 }
 
+RCT_EXPORT_METHOD(urlWithAdobeVisitorInfo: (NSString *)url urlWithAdobeVisitorInfoWithResolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+    NSURL *urlWithVisitorData = [ADBMobile visitorAppendToURL:url];
+    if([urlWithVisitorData length] == 0) {
+        reject("Could not generate tracking URL");
+    } else {
+        resolve(urlWithVisitorData);
+    }
+}
+
 RCT_EXPORT_METHOD(trackAction: (NSString *)action contextData:(NSDictionary *)contextData) {
     [ADBMobile trackAction:action data:contextData];
 }
