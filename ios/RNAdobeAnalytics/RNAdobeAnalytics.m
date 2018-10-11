@@ -48,7 +48,7 @@ RCT_EXPORT_METHOD(urlWithAdobeVisitorInfo: (NSString *)url urlWithAdobeVisitorIn
     } else {
         NSError *error = [NSError errorWithDomain:NSURLErrorDomain
                                              code:1000
-                                         userInfo:@{@"URL", @"is broken"}];
+                                         userInfo:@{@"URL": @"is broken"}];
         reject(@"no_url",@"There is no URL",error);
     }
     
