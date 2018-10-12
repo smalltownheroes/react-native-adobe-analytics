@@ -38,11 +38,15 @@ RCT_EXPORT_METHOD(init: (NSDictionary *)options)
     }
 }
 
-RCT_EXPORT_METHOD(urlWithAdobeVisitorInfo: (NSString *)url urlWithAdobeVisitorInfoWithResolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject) {
-    NSString *urlWithVisitorData = [ADBMobile visitorAppendToURL:url];
+RCT_REMAP_METHOD(urlWithAdobeVisitorInfo,
+                 url:(NSString *)url
+                 urlWithAdobeVisitorInfoWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejector:(RCTPromiseRejectBlock)reject) {
+    
+    NSURL *myUrl = [NSURL URLWithString:url];
+    NSURL *urlWithVisitorData = [ADBMobile visitorAppendToURL: myUrl];
     NSLog(@"Input url: %@", url);
-    NSLog(@"Visitor url: %@", urlWithVisitorData);
+    NSLog(@"Visitor url: %@", urlWithVisitorData.absoluteString);
     if(urlWithVisitorData) {
         resolve(urlWithVisitorData.absoluteString);
     } else {
