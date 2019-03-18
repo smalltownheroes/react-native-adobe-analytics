@@ -58,6 +58,16 @@ RCT_REMAP_METHOD(urlWithAdobeVisitorInfo,
     
 }
 
+RCT_EXPORT_METHOD(marketingCloudId:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    NSString *mcid = [ADBMobile visitorMarketingCloudID];
+    NSLog(@"Visitor Marketing Cloud ID: %@", mcid);
+    if (mcid) {
+        resolve(mcid);
+    } else {
+        reject(mcid);
+    }
+}
+
 RCT_EXPORT_METHOD(trackAction: (NSString *)action contextData:(NSDictionary *)contextData) {
     [ADBMobile trackAction:action data:contextData];
 }

@@ -61,6 +61,18 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+	public void marketingCloudId(Promise promise) {
+		String mcid = Visitor.getMarketingCloudId();
+		Log.i("RN-adobe-analytics", "####### getMarketingCloudId ####### " + mcid);
+		if (mcid != null && !mcid.isEmpty()) {
+			promise.resolve(mcid);
+		}
+		else {
+			promise.reject("Could not obtain the Marketing Cloud ID from Visitor");
+		}
+	}
+
+	@ReactMethod
 	public void init(ReadableMap options) {
 		Config.setDebugLogging(options.getBoolean("debug"));
 	}

@@ -12,6 +12,10 @@ export class AdobeAnalyticsAPI {
     RNAdobeAnalytics.init({ debug });
   }
 
+  static marketingCloudId() {
+    return RNAdobeAnalytics.marketingCloudId();
+  }
+
   static urlWithAdobeVisitorInfo(url) {
     return RNAdobeAnalytics.urlWithAdobeVisitorInfo(url);
   }
