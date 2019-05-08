@@ -2,24 +2,25 @@
 package be.smalltownheroes.adobe.analytics;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import android.util.Log;
 import android.app.Activity;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.LifecycleEventListener;
 
 import com.adobe.mobile.Config;
 import com.adobe.mobile.Analytics;
 import com.adobe.mobile.MediaSettings;
 import com.adobe.mobile.Media;
-import com.adobe.mobile.Visitor;
-import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.bridge.WritableNativeMap;
-
+import com.adobe.mobile.MediaState;
 
 public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
@@ -75,6 +76,34 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 		Analytics.trackAction(action, contextMap);
 	}
 
+//Adding timed action events - start, update and end. Also get Marketing cloud ID function
+
+
+	@ReactMethod
+	public void trackTimedActionStart(String action, ReadableMap contextData) {
+		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("RN-adobe-analytics", "####### trackTimesActionStart ####### " + action);
+		Analytics.trackTimedActionStart(action, contextMap);
+	}
+
+
+
+	@ReactMethod
+	public void trackTimedActionUpdate(String action, ReadableMap contextData) {
+		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("RN-adobe-analytics", "####### trackTimesActionUpdate ####### " + action);
+		Analytics.trackTimedActionUpdate(action, contextMap);
+	}
+
+	@ReactMethod
+	public void trackTimedActionEnd(String action) {
+		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
+		Log.i("RN-adobe-analytics", "####### trackTimesActionEnd ####### " + action);
+		Analytics.trackTimedActionEnd(action,  new Analytics.TimedActionBlock<Boolean>());
+	}
+
+//End of updates
+
 	@ReactMethod
 	public void trackVideo(String action, ReadableMap settings) {
 		Log.i("RN-adobe-analytics", "####### trackVideo ####### " + action);
@@ -123,9 +152,9 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 			}
 		}
 	}
-
+	
 	@ReactMethod
-	public void getVisitorID(Callback successCb, Callback errorCb) {
+	public void getVisitorID(Callback successCb) {
 		WritableMap visitorMap = new WritableNativeMap();
 		visitorMap.putString("MCID", Visitor.getMarketingCloudId());
 		successCb.invoke(visitorMap);
