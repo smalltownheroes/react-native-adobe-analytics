@@ -99,7 +99,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public void trackTimedActionEnd(String action) {
+	public void trackTimedActionEnd(String action, ReadableMap contextData) {
 		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
 		Log.i("RN-adobe-analytics", "####### trackTimesActionEnd ####### " + action);
 		Analytics.trackTimedActionEnd(action,  new Analytics.TimedActionBlock<Boolean>());
