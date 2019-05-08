@@ -24,21 +24,6 @@ export class AdobeAnalyticsAPI {
     RNAdobeAnalytics.trackVideo(action, settings);
   }
 
-    static trackTimedActionStart(action, contextData = {}) {
-    RNAdobeAnalytics.trackTimedActionStart(action, contextData);
-  }
-
-
-  static trackTimedActionUpdate(action, contextData = {}) {
-    RNAdobeAnalytics.trackTimedActionUpdate(action, contextData);
-  }
-
-//Open question
-
-  static trackTimedActionEnd(action) {
-    RNAdobeAnalytics.trackTimedActionEnd(action);
-  }
-
   static getVisitorID(successCb) {
     RNAdobeAnalytics.getVisitorID(successCb);
   }
