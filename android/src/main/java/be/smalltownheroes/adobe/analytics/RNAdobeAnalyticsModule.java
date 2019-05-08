@@ -23,6 +23,7 @@ import com.adobe.mobile.Analytics;
 import com.adobe.mobile.MediaSettings;
 import com.adobe.mobile.Media;
 import com.adobe.mobile.MediaState;
+import com.adobe.mobile.Visitor;
 
 public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
@@ -98,7 +99,7 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public void trackTimedActionEnd(String action) {
+	public void trackTimedActionEnd(String action, ReadableMap contextData) {
 		Map<String, Object> contextMap = convertReadableMapToHashMap(contextData);
 		Log.i("RN-adobe-analytics", "####### trackTimesActionEnd ####### " + action);
 		Analytics.trackTimedActionEnd(action,  new Analytics.TimedActionBlock<Boolean>());
