@@ -39,7 +39,9 @@ export class AdobeAnalyticsAPI {
     RNAdobeAnalytics.trackTimedActionEnd(action);
   }
 
-
+  static getVisitorID(successCb) {
+    RNAdobeAnalytics.getVisitorID(successCb);
+  }
 
 }
 
