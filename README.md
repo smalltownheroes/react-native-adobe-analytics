@@ -3,18 +3,23 @@
 React Native bridge for Adobe Analytics.
 
 ## Installation
+### Using npm
 ```
 $ npm install react-native-adobe-analytics --save
+$ react-native link react-native-adobe-analytics
 ```
-### Automatic linking
+### Using CocoaPods (iOS only)
+Add this to your Podfile and run `pod install`
 ```
-$ react-native link
+$ pod 'RNAdobeAnalytics', :path => '../node_modules/react-native-adobe-analytics'
 ```
+
+Consult the React Native documentation on how to [install React Native using CocoaPods.](https://facebook.github.io/react-native/docs/embedded-app-ios.html#install-react-native-using-cocoapods)
 
 ### Configuration file
 Get your ADBMobileConfig.json file from Adobe Mobile Services.
-- On iOS, add the ADBMobileConfig.json file to your XCode project so that it's accessible in your bundle.
-- On Android, the ADBMobileConfig.json file must be placed in the assets folder.
+- On iOS, add the `ADBMobileConfig.json` file to your XCode project so that it's accessible in your bundle.
+- On Android, the `ADBMobileConfig.json` file must be placed in the `assets` folder.
 
 ### Android Configuration
 #### Update `MainApplication.java`
