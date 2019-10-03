@@ -1,6 +1,6 @@
 {
   "name": "react-native-adobe-analytics",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "React Native bridge for Adobe Analytics",
   "author": "Small Town Heroes & VRT",
   "license": "MIT",
@@ -15,6 +15,10 @@
     "eslint": "eslint **/*.js",
     "format": "prettier --write --single-quote --bracket-spacing=true --print-width=120 '**/*.js'",
     "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smalltownheroes/react-native-adobe-analytics.git"
   },
   "lint-staged": {
     "*.js": [
