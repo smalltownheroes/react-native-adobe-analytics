@@ -32,4 +32,5 @@ repositories {
 dependencies {
     compile 'com.facebook.react:react-native:+'
     compile 'com.adobe.mobile:adobeMobileLibrary:4.14.0'
+    implementation "com.google.android.gms:play-services-ads-identifier:16.0.0"
 }

@@ -3,7 +3,9 @@ package be.smalltownheroes.adobe.analytics;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.concurrent.Callable;
 
+import android.content.Context;
 import android.util.Log;
 import android.app.Activity;
 
@@ -24,6 +26,7 @@ import com.adobe.mobile.MediaSettings;
 import com.adobe.mobile.Media;
 import com.adobe.mobile.MediaState;
 import com.adobe.mobile.Visitor;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 
 public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 
@@ -34,7 +37,28 @@ public class RNAdobeAnalyticsModule extends ReactContextBaseJavaModule {
 		@Override
 		public void onHostResume() {
 			Log.d("RESUME", "LIFECYCLE");
-			Config.collectLifecycleData(activity);
+
+			final Activity currentActivity = getCurrentActivity();
+
+			final Callable<String> task = new Callable<String>(){
+				@Override
+				public String call() throws Exception {
+					AdvertisingIdClient.Info idInfo;
+					String adid = null;
+					Context appContext = currentActivity.getApplicationContext();
+					try {
+						idInfo = AdvertisingIdClient.getAdvertisingIdInfo(appContext);
+						if (idInfo != null) {
+							adid = idInfo.getId();
+						}
+					} catch  (Exception ex) {
+						Log.e("Error",  ex.getLocalizedMessage());
+					}
+					return  adid;
+				}
+			};
+			Config.submitAdvertisingIdentifierTask(task);
+			Config.collectLifecycleData(currentActivity);
 		}
 
 		@Override
