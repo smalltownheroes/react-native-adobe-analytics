@@ -1,3 +1,7 @@
+# Unmaintainted repo
+
+This repo is currently unmaintained. This organization will stop soon (beginning 2020) - If anybody wants to step in as maintainer let us know.
+
 # React Native Adobe Analytics
 
 React Native bridge for Adobe Analytics.
